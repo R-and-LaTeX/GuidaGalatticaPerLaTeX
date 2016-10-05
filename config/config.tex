@@ -1,0 +1,148 @@
+%**************************************************************
+% file contenente le impostazioni della tesi
+%**************************************************************
+
+%**************************************************************
+% Frontespizio
+%**************************************************************
+\newcommand{\myName}{Davide Polonio}                                    % autore
+\newcommand{\myTitle}{XXXXXXXXXXX}
+\newcommand{\myUni}{Università degli Studi di Padova}           % università
+\newcommand{\myFaculty}{Corso di Laurea in Informatica}         % facoltà
+\newcommand{\myDepartment}{Dipartimento di Matematica}          % dipartimento
+\newcommand{\myLocation}{Padova}                                % dove
+\newcommand{\myAA}{2015-2016}                                   % anno
+
+
+%**************************************************************
+% Impostazioni di impaginazione
+% see: http://wwwcdf.pd.infn.it/AppuntiLinux/a2547.htm
+%**************************************************************
+
+\setlength{\parindent}{14pt}   % larghezza rientro della prima riga
+\setlength{\parskip}{0pt}   % distanza tra i paragrafi
+
+
+%**************************************************************
+% Impostazioni di caption
+%**************************************************************
+\captionsetup{
+    tableposition=top,
+    figureposition=bottom,
+    font=small,
+    format=hang,
+    labelfont=bf
+}
+
+%**************************************************************
+% Impostazioni di glossaries
+%**************************************************************
+\input{res/glossary} % database di termini
+\makeglossaries
+
+
+%**************************************************************
+% Impostazioni di graphicx
+%**************************************************************
+\graphicspath{{res/img/}} % cartella dove sono riposte le immagini
+
+
+%**************************************************************
+% Impostazioni di hyperref
+%**************************************************************
+\hypersetup{
+    %hyperfootnotes=false,
+    %pdfpagelabels,
+    %draft,	% = elimina tutti i link (utile per stampe in bianco e nero)
+    colorlinks=true,
+    linktocpage=true,
+    pdfstartpage=1,
+    pdfstartview=FitV,
+    % decommenta la riga seguente per avere link in nero (per esempio per la
+%stampa in bianco e nero)
+    %colorlinks=false, linktocpage=false, pdfborder={0 0 0}, pdfstartpage=1,
+%pdfstartview=FitV,
+    breaklinks=true,
+    pdfpagemode=UseNone,
+    pageanchor=true,
+    pdfpagemode=UseOutlines,
+    plainpages=false,
+    bookmarksnumbered,
+    bookmarksopen=true,
+    bookmarksopenlevel=1,
+    hypertexnames=true,
+    pdfhighlight=/O,
+    %nesting=true,
+    %frenchlinks,
+    urlcolor=webbrown,
+    linkcolor=RoyalBlue,
+    citecolor=webgreen,
+    %pagecolor=RoyalBlue,
+    %urlcolor=Black, linkcolor=Black, citecolor=Black, %pagecolor=Black,
+    pdftitle={\myTitle},
+    pdfauthor={\textcopyright\ \myName, \myUni, \myFaculty},
+    pdfsubject={},
+    pdfkeywords={},
+    pdfcreator={pdfLaTeX},
+    pdfproducer={LaTeX}
+}
+
+%**************************************************************
+% Impostazioni di itemize
+%**************************************************************
+\renewcommand{\labelitemi}{$\ast$}
+
+%\renewcommand{\labelitemi}{$\bullet$}
+%\renewcommand{\labelitemii}{$\cdot$}
+%\renewcommand{\labelitemiii}{$\diamond$}
+%\renewcommand{\labelitemiv}{$\ast$}
+
+
+%**************************************************************
+% Impostazioni di listings
+%**************************************************************
+\lstset{
+    language=[LaTeX]Tex,%C++,
+    keywordstyle=\color{RoyalBlue}, %\bfseries,
+    basicstyle=\small\ttfamily,
+    %identifierstyle=\color{NavyBlue},
+    commentstyle=\color{Green}\ttfamily,
+    stringstyle=\rmfamily,
+    numbers=none, %left,%
+    numberstyle=\scriptsize, %\tiny
+    stepnumber=5,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frameround=ftff,
+    frame=single
+}
+
+
+%**************************************************************
+% Impostazioni di xcolor
+%**************************************************************
+\definecolor{webgreen}{rgb}{0,.5,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+
+
+%**************************************************************
+% Altro
+%**************************************************************
+
+\newcommand{\omissis}{[\dots\negthinspace]} % produce [...]
+
+% eccezioni all'algoritmo di sillabazione
+\hyphenation
+{
+    ma-cro-istru-zio-ne
+    gi-ral-din
+}
+
+\newcommand{\sectionname}{sezione}
+\addto\captionsitalian{\renewcommand{\figurename}{figura}
+                       \renewcommand{\tablename}{tabella}}
+
+\newcommand{\glsfirstoccur}{\ap{{[g]}}}
+
+\newcommand{\intro}[1]{\emph{\textsf{#1}}}

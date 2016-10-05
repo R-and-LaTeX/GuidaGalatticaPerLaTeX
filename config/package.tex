@@ -1,0 +1,89 @@
+\documentclass[12pt,                    % corpo del font principale
+               a4paper,                 % carta A4
+               twoside,                 % impagina per fronte-retro
+               openright,               % inizio capitoli a destra
+               english,
+               italian,
+               ]{book}
+
+
+% codifica di input; anche [latin1] va bene
+% NOTA BENE! va accordata con le preferenze dell'editor
+\usepackage[utf8]{inputenc}
+
+%**************************************************************
+% Importazione package
+%**************************************************************
+
+%\usepackage{amsmath,amssymb,amsthm}    % matematica
+
+
+% per scrivere in italiano e in inglese;
+% l'ultima lingua (l'italiano) risulta predefinita
+\usepackage[english, italian]{babel}
+
+\usepackage{bookmark}                   % segnalibri
+
+\usepackage{caption}                    % didascalie
+
+\usepackage{chngpage,calc}              % centra il frontespizio
+
+% gestisce automaticamente i caratteri (")
+\usepackage{csquotes}
+
+% pagine vuote senza testatina e piede di pagina
+\usepackage{emptypage}
+
+\usepackage{epigraph}					% per epigrafi
+
+\usepackage{eurosym}                    % simbolo dell'euro
+
+% codifica dei font:
+% NOTA BENE! richiede una distribuzione *completa* di LaTeX
+\usepackage[T1]{fontenc}
+
+% rientra il primo paragrafo di ogni sezione
+%\usepackage{indentfirst}
+
+\usepackage{graphicx}                   % immagini
+
+\usepackage{hyperref}                   % collegamenti ipertestuali
+
+
+% margini ottimizzati per l'A4; rilegatura di 5 mm
+\usepackage[binding=5mm]{layaureo}
+
+\usepackage{listings}                   % codici
+
+\usepackage{microtype}                  % microtipografia
+
+\usepackage{mparhack,relsize}  % finezze tipografiche
+
+\usepackage{nameref}                    % visualizza nome dei riferimenti
+
+\usepackage[font=small]{quoting}        % citazioni
+
+\usepackage{subfig}                     % sottofigure, sottotabelle
+
+\usepackage[italian]{varioref}          % riferimenti completi della pagina
+
+\usepackage[dvipsnames]{xcolor}         % colori
+
+\usepackage{booktabs}                   % tabelle
+\usepackage{tabularx}                   % tabelle di larghezza prefissata
+\usepackage{longtable}                  % tabelle su più pagine
+% tabelle su più pagine e adattabili in larghezza
+\usepackage{ltxtable}
+
+% glossario
+% per includerlo nel documento bisogna:
+% 1. compilare una prima volta tesi.tex;
+% 2. eseguire: makeindex -s tesi.ist -t tesi.glg -o tesi.gls tesi.glo
+% 3. eseguire: makeindex -s tesi.ist -t tesi.alg -o tesi.acr tesi.acn
+% 4. compilare due volte tesi.tex.
+\usepackage[toc, acronym]{glossaries}
+
+% permette di inserire le immagini/tabelle esattamente dove viene usato il
+% comando \begin{figure}[H] ... \end{figure}
+% evitando che venga spostato in automatico
+\usepackage{float}
