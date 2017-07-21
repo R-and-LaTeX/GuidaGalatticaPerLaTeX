@@ -1,7 +1,7 @@
 #Author: Polonio Davide <poloniodavide@gmail.com>
 #License: GPLv3
 
-OUTPUT_NAME= XXXX
+OUTPUT_NAME= GuidaGalatticaPerLaTeX
 LIST_NAME= listOfSections.tex
 PATH_OF_CONTENTS= res/sections
 MAIN_FILE= main

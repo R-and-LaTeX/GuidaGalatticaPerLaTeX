@@ -5,13 +5,23 @@
 %**************************************************************
 % Frontespizio
 %**************************************************************
-\newcommand{\myName}{Davide Polonio}                                    % autore
-\newcommand{\myTitle}{XXXXXXXXXXX}
+\newcommand{\myName}{Davide Polonio, Marco Zanella}     %autore
+
+\newcommand{\myTitle}{Guida Galattica per LaTeX}
 \newcommand{\myUni}{Università degli Studi di Padova}           % università
-\newcommand{\myFaculty}{Corso di Laurea in Informatica}         % facoltà
+\newcommand{\myFaculty}{Corso di Laurea Magistrale in Informatica} %facoltà
 \newcommand{\myDepartment}{Dipartimento di Matematica}          % dipartimento
 \newcommand{\myLocation}{Padova}                                % dove
-\newcommand{\myAA}{2015-2016}                                   % anno
+\newcommand{\myAA}{2017-2018}                                   % anno
+\newcommand{\myCopyright}{CC-BY-SA-4.0}                         % copyright
+\newcommand{\myVersion}{v0.1.0}                                % versione
+\newcommand{\myRelease}{
+https://www.example.com}
+\newcommand{\myIssue}{
+https://www.example.com}
+\newcommand{\myPullRequest}{
+https://www.example.com}
+
 
 
 %**************************************************************
@@ -90,7 +100,7 @@
 %**************************************************************
 % Impostazioni di itemize
 %**************************************************************
-\renewcommand{\labelitemi}{$\ast$}
+%\renewcommand{\labelitemi}{$\ast$}
 
 %\renewcommand{\labelitemi}{$\bullet$}
 %\renewcommand{\labelitemii}{$\cdot$}
@@ -140,9 +150,29 @@
 }
 
 \newcommand{\sectionname}{sezione}
-\addto\captionsitalian{\renewcommand{\figurename}{figura}
-                       \renewcommand{\tablename}{tabella}}
+%\addto\captionsitalian{\renewcommand{\figurename}{Figura}
+%                       \renewcommand{\tablename}{tabella}}
 
 \newcommand{\glsfirstoccur}{\ap{{[g]}}}
 
 \newcommand{\intro}[1]{\emph{\textsf{#1}}}
+
+%-------------------INIZIO creazione subsubparagraph--------------------------------------
+\makeatletter
+\newcounter{subsubparagraph}[subparagraph]
+\def\toclevel@subsubparagraph{6}
+\renewcommand\thesubsubparagraph{%
+  \thesubparagraph.\@arabic\c@subsubparagraph}
+\newcommand\subsubparagraph{%
+  \@startsection{subsubparagraph}    % counter
+    {6}                              % level
+    {\parindent}                     % indent
+    {3.25ex \@plus 1ex \@minus .2ex} % beforeskip
+    {-1em}                           % afterskip
+    {\normalfont\normalsize\bfseries}}
+\newcommand\l@subsubparagraph{\@dottedtocline{6}{13.5em}{5em}}
+\newcommand{\subsubparagraphmark}[1]{}
+\setcounter{tocdepth}{6}
+\setcounter{secnumdepth}{6} % aggiunge contatore ai paragrafi
+\makeatother
+%-------------------FINE creazione subsubparagraph--------------------------------------
