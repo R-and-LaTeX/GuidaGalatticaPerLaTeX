@@ -7,7 +7,7 @@
 %**************************************************************
 \newcommand{\myName}{Davide Polonio, Marco Zanella}     %autore
 
-\newcommand{\myTitle}{Guida Galattica per LaTeX}
+\newcommand{\myTitle}{Guida Galattica per \LaTeX}
 \newcommand{\myUni}{Università degli Studi di Padova}           % università
 \newcommand{\myFaculty}{Corso di Laurea Magistrale in Informatica} %facoltà
 \newcommand{\myDepartment}{Dipartimento di Matematica}          % dipartimento
@@ -134,6 +134,7 @@ https://www.example.com}
 %**************************************************************
 \definecolor{webgreen}{rgb}{0,.5,0}
 \definecolor{webbrown}{rgb}{.6,0,0}
+\definecolor{Pantone}{RGB}{155,0,20}
 
 
 %**************************************************************
@@ -176,3 +177,16 @@ https://www.example.com}
 \setcounter{secnumdepth}{6} % aggiunge contatore ai paragrafi
 \makeatother
 %-------------------FINE creazione subsubparagraph--------------------------------------
+
+
+%-------------------Capitoli personalizzati------------------------------------
+
+\titleformat{\chapter}[display]
+  {\normalsize \huge  \color{black}}%
+  {\flushright\normalsize \color{Pantone}%
+   \MakeUppercase{\chaptertitlename}\hspace{1ex}%
+   {\fontsize{60}{60}\selectfont\thechapter}}%
+  {10 pt}%
+  {\bfseries\huge}%
+  
+%----------------FINE Capitoli personalizzati----------------------------------
