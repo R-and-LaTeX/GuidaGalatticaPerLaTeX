@@ -1,8 +1,19 @@
 Guida Galattica Per LaTeX
 =========================
 
+[![Stories in Ready](https://badge.waffle.io/R-and-LaTeX/GuidaGalatticaPerLaTeX.png?label=ready&title=Ready)](http://waffle.io/R-and-LaTeX/GuidaGalatticaPerLaTeX)
+
 Questa guida introduttiva al mondo di LaTeX è stata progettata per il corso
-_Relatex_ dell'Università di Padova, al dipartimento di informatica.
+_ReLaTeX_ dell'Università di Padova, al dipartimento di informatica.
+
+### Build status
+
+| Branch | Build Status |
+| ------ | -------------|
+| Master | [![Build Status](https://travis-ci.org/R-and-LaTeX/GuidaGalatticaPerLaTeX.svg?branch=master)](https://travis-ci.org/R-and-LaTeX/GuidaGalatticaPerLaTeX) |
+| Dev    | [![Build Status](https://travis-ci.org/R-and-LaTeX/GuidaGalatticaPerLaTeX.svg?branch=develop)](https://travis-ci.org/R-and-LaTeX/GuidaGalatticaPerLaTeX)    |
+
+
 
 ## Download
 
