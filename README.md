@@ -6,8 +6,9 @@ _Relatex_ dell'Università di Padova, al dipartimento di informatica.
 
 ## Download
 
-Per scaricare la guida recarsi nella sezione [download]() a cui sarà possibile
-ottenere l'ultima versione considerata stabile.
+Per scaricare la guida recarsi nella sezione 
+[download](https://github.com/R-and-LaTeX/GuidaGalatticaPerLaTeX/releases)
+a cui sarà possibile ottenere l'ultima versione considerata stabile.
 
 ## Compilazione
 
