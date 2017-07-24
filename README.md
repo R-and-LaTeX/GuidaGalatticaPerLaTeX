@@ -27,7 +27,8 @@ troveranno contenuti più stabili.
 ## Contribuire
 
 Le contribuzioni sono ben accette e possono essere eseguite tramite la
-segnalazione di errori o tramite Pull Request.
+[segnalazione di errori](https://github.com/R-and-LaTeX/GuidaGalatticaPerLaTeX/issues)
+o tramite [contribuzioni](https://github.com/R-and-LaTeX/GuidaGalatticaPerLaTeX/pulls).
 
 ## Licenza
 
