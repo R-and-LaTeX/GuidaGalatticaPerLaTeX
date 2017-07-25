@@ -3,6 +3,85 @@
 Di seguito verranno illustrati i comandi base di \LaTeX{}, utili per scrivere 
 qualsiasi tipo di documento.
 
+\section{Liste}
+
+Le liste nei documenti possono risultare molto utili quando si tratta di 
+elencare oggetti in sequenza, in quanto aumentano la leggibilità e 
+scorrevolezza di un testo, non appesantendone la lettura.
+
+La lista è composta fondamentalmente da 3 comandi:
+\begin{itemize}
+ \item \verb!\begin{}! per dichiarare che si sta iniziando una 
+lista puntata
+ \item \verb!\item! per indicare un punto della lista
+ \item \verb!\end{}! per segnalare che la lista puntata è terminata.
+\end{itemize}
+
+Esistono due tipologie di liste: elenchi puntati ed elenchi numerati. Per gli 
+elenchi \textbf{puntati} si utilizza \texttt{itemize} all'interno delle 
+parentesi di \texttt{begin} e \texttt{end}. Se invece si vogliono utilizzare 
+gli elenchi \textbf{numerati} la parola da inserire all'interno di 
+\texttt{begin} e 
+\texttt{end} è \texttt{enumerate}.
+
+\subsection{Esempi}
+
+Per far capire meglio quanto spiegato verranno illustrati un paio di esempi.
+
+\noindent Prima di tutto vediamo una lista puntata:
+\lstinputlisting[firstline=0, lastline=6]{res/examples/liste.tex}
+
+\noindent Questo è invece il codice per una lista numerata:
+\lstinputlisting[firstline=8, lastline=13]{res/examples/liste.tex}
+
+\subsection{Personalizzare gli elenchi puntati}
+
+Gli elenchi sono interessanti, ma a volte potremmo volere qualcosa di più. 
+Fortunatamente \LaTeX{} è stato progettato anche con questa possibilità, ed è 
+possibile applicare piccoli trucchetti per rendere i propri elenchi puntati 
+``speciali''.
+
+\subsubsection{Item personalizzati}
+
+Gli item possono essere personalizzati e al posto dei punti inserire un simbolo 
+o un nome personalizzato. Vediamo subito un esempio.
+
+Scrivendo a esempio il seguente codice:
+
+\lstinputlisting[firstline=16, lastline=21]{res/examples/liste.tex}
+
+\vspace{\abovedisplayskip}
+\begin{minipage}{\linewidth}
+  Che produrrà:
+
+  \begin{itemize}
+    \item[Uno] Questo
+    \item[Due] elenco
+    \item[Tre] risulta
+    \item[Quattro] personalizzato
+  \end{itemize} 
+ 
+\end{minipage}
+\vspace{\belowdisplayskip}
+
+
+\noindent Come possiamo notare, non sempre l'aspetto che otteniamo è bello, ma 
+questo è un altro discorso.
+
+\subsubsection{Personalizzare gli elenchi puntati}
+
+A volte il classico pallino degli elenchi puntati è proprio brutto, e vorremmo 
+sostituirlo con qualcosa di diverso.
+Anche questa operazione è piuttosto semplice, e va eseguita nel preambolo.
+
+\noindent Il codice da inserire è il seguente:
+
+\verb!\renewcommand{\labelitemi}{$\ast$}!
+
+\noindent Questo ci modificherà tutti gli elenchi puntati, mettendo al posto 
+del classico pallino un asterisco, ``*''. Ci sono altre opzioni, come per 
+esempio \verb!$\bullet$!, \verb!$\cdot$! e \verb!$\diamond$!.
+
 \section{Formattazione di base}
 
 Non c'è da sorprendersi che su un linguaggio progettato per scrivere documenti 
@@ -74,85 +153,4 @@ una spaziatura verticale).
 \paragraph*{Spaziatura orizzontale} La spaziatura orizzontale si esegue invece 
 con il comando \verb!\hspace{ }! e senza sorprese esegue una spaziatura di tipo 
 orizzontale.
-
-\section{Liste}
-
-Le liste nei documenti possono risultare molto utili quando si tratta di 
-elencare oggetti in sequenza, in quanto aumentano la leggibilità e 
-scorrevolezza di un testo, non appesantendone la lettura.
-
-La lista è composta fondamentalmente da 3 comandi:
-\begin{itemize}
- \item \verb!\begin{}! per dichiarare che si sta iniziando una 
-lista puntata
- \item \verb!\item! per indicare un punto della lista
- \item \verb!\end{}! per segnalare che la lista puntata è terminata.
-\end{itemize}
-
-Esistono due tipologie di liste: elenchi puntati ed elenchi numerati. Per gli 
-elenchi \textbf{puntati} si utilizza \texttt{itemize} all'interno delle 
-parentesi di \texttt{begin} e \texttt{end}. Se invece si vogliono utilizzare 
-gli elenchi \textbf{numerati} la parola da inserire all'interno di 
-\texttt{begin} e 
-\texttt{end} è \texttt{enumerate}.
-
-\subsection{Esempi}
-
-Per far capire meglio quanto spiegato verranno illustrati un paio di esempi.
-
-\noindent Prima di tutto vediamo una lista puntata:
-\lstinputlisting[firstline=0, lastline=6]{res/examples/liste.tex}
-
-\noindent Questo è invece il codice per una lista numerata:
-\lstinputlisting[firstline=8, lastline=13]{res/examples/liste.tex}
-
-\subsection{Personalizzare gli elenchi puntati}
-
-Gli elenchi sono interessanti, ma a volte potremmo volere qualcosa di più. 
-Fortunatamente \LaTeX{} è stato progettato anche con questa possibilità, ed è 
-possibile applicare piccoli trucchetti per rendere i propri elenchi puntati 
-``speciali''.
-
-\subsubsection{Item personalizzati}
-
-Gli item possono essere personalizzati e al posto dei punti inserire un simbolo 
-o un nome personalizzato. Vediamo subito un esempio.
-
-Scrivendo a esempio il seguente codice:
-
-\lstinputlisting[firstline=16, lastline=21]{res/examples/liste.tex}
-
-\vspace{\abovedisplayskip}
-
-\begin{minipage}{\linewidth}
-  Che produrrà:
-
-  \begin{itemize}
-    \item[Uno] Questo
-    \item[Due] elenco
-    \item[Tre] risulta
-    \item[Quattro] personalizzato
-  \end{itemize} 
- 
-\end{minipage}
-
-\vspace{\belowdisplayskip}
-
-
-\noindent Come possiamo notare, non sempre l'aspetto che otteniamo è bello, ma 
-questo è un altro discorso.
-
-\subsubsection{Personalizzare gli elenchi puntati}
-
-A volte il classico pallino degli elenchi puntati è proprio brutto, e vorremmo 
-sostituirlo con qualcosa di diverso.
-Anche questa operazione è piuttosto semplice, e va eseguita nel preambolo.
-
-\noindent Il codice da inserire è il seguente:
-
-\verb!\renewcommand{\labelitemi}{$\ast$}!
-
-\noindent Questo ci modificherà tutti gli elenchi puntati, mettendo al posto 
-del classico pallino un asterisco, ``*''. Ci sono altre opzioni, come per 
-esempio \verb!$\bullet$!, \verb!$\cdot$! e \verb!$\diamond$!.
 
