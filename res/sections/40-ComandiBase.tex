@@ -28,11 +28,20 @@ gli elenchi \textbf{numerati} la parola da inserire all'interno di
 
 Per far capire meglio quanto spiegato verranno illustrati un paio di esempi.
 
-\noindent Prima di tutto vediamo una lista puntata:
-\lstinputlisting[firstline=0, lastline=6]{res/examples/liste.tex}
+\vspace{\abovedisplayskip}
+\begin{minipage}{\linewidth}
+  \noindent Prima di tutto vediamo una lista puntata:
+  \lstinputlisting[firstline=0, lastline=6]{res/examples/liste.tex}
+\end{minipage}
+\vspace{\belowdisplayskip}
+                          
+\vspace{\abovedisplayskip}
+\begin{minipage}{\linewidth}
+  \noindent Questo è invece il codice per una lista numerata:
+  \lstinputlisting[firstline=8, lastline=13]{res/examples/liste.tex}
+\end{minipage}
+\vspace{\belowdisplayskip}
 
-\noindent Questo è invece il codice per una lista numerata:
-\lstinputlisting[firstline=8, lastline=13]{res/examples/liste.tex}
 
 \subsection{Personalizzare gli elenchi puntati}
 
@@ -154,3 +163,22 @@ una spaziatura verticale).
 con il comando \verb!\hspace{ }! e senza sorprese esegue una spaziatura di tipo 
 orizzontale.
 
+\subsection{Orientare le pagine}
+
+No, non stiamo parlando come trovare far trovare la posizione alle pagine che si 
+sono perse, ma vi spiegheremo come sia possibile avere pagine orientate in 
+maniera orizzontale in un documento con pagine verticali. Vedremo poi come 
+invece applicare un'orientazione orizzontale ad un intero documento.
+
+\subsubsection{Una pagina orizzontale}
+
+Per avere solo una pagina orizzontale i passi da fare non sono molti, e 
+consistono a dire al signor \LaTeX{} che vogliamo che la prossima pagina sia 
+ruotata di 90 gradi.
+
+\vspace{\abovedisplayskip}
+\begin{minipage}{\linewidth}
+  \noindent Vediamo un esempio completo:
+  \lstinputlisting{res/examples/paginaRuotata.tex}
+\end{minipage}
+\vspace{\belowdisplayskip}
