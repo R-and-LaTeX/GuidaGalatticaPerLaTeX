@@ -3,6 +3,27 @@
 Di seguito verranno illustrati i comandi base di \LaTeX{}, utili per scrivere 
 qualsiasi tipo di documento.
 
+\section{Formattazione di base}
+
+Non c'è da sorprendersi che su un linguaggio progettato per scrivere documenti 
+esista la formattazione di base.
+
+\paragraph*{Grassetto} \textbf{Per scrivere in grassetto il comando da dare è 
+il seguente: }\verb!\textbf{testo da scrivere in grassetto}!.
+
+\paragraph*{Corsivo} \textit{Per il corsivo il comando da dare è invece: }
+\verb!\textit{testo in corsivo}!.
+
+\paragraph*{Sottolineato} \underline{Il sottolineato si fa invece con:} 
+\verb!\underline{testo sottolineato}!.
+
+\paragraph*{Testo barrato} \sout{Per cancellare il testo: }
+\verb!\sout{Testo da cancellare}!\footnote{Nota che per il testo sbarrato è 
+necessario aggiungere un altro pacchetto, scrivendo \texttt{\textbackslash 
+usepackage[normalem]\{ulem\}}. La parte relativa ai pacchetti verrà trattata 
+meglio più avanti.}.
+
+
 \section{Liste}
 
 Le liste nei documenti possono risultare molto utili quando si tratta di 
@@ -20,7 +41,8 @@ lista puntata
 Esistono due tipologie di liste: elenchi puntati ed elenchi numerati. Per gli 
 elenchi \textbf{puntati} si utilizza \texttt{itemize} all'interno delle 
 parentesi di \texttt{begin} e \texttt{end}. Se invece si vogliono utilizzare 
-gli elenchi numerati la parola da inserire all'interno di \texttt{begin} e 
+gli elenchi \textbf{numerati} la parola da inserire all'interno di 
+\texttt{begin} e 
 \texttt{end} è \texttt{enumerate}.
 
 \subsection{Esempi}
