@@ -137,3 +137,5 @@ res/listOfSections.tex
 
 Tesi.zip
 bin/*
+*.backup
+*.kate-swp
