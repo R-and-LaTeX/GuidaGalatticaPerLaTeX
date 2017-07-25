@@ -1,0 +1,53 @@
+\chapter{Primi passi}
+Possiamo finalmente passare alla creazione del nostro primo documento in \LaTeX
+!
+\lstinputlisting{res/sections/examples/primodocumento.tex}
+Non ci soprenderà molto che, compilando questo file, ci creerà un file PDF con 
+all'interno scritto \textit{``Ecco il mio primo documento con \LaTeX.''}. Non 
+sempre, ahimè, tutto va come vorremmo. Infatti bisogna scrivere le cose in 
+maniera corretta altrimenti non verrà prodotto il documento che vogliamo. In 
+questo caso per esempio abbiamo un errore.
+\lstinputlisting{res/sections/examples/errore.tex}
+Sarebbe molto bello che il computer ci dicesse \texttt{Ehi guarda che manca 
+una ``u''} ma purtroppo ci dirà 
+\verb!LaTeX Error: \begin{document} ended by \end{docment}.!, meno espressivo 
+di certo ma ci aiuta a capire lo stesso dove sbagliamo. Abituatevi! Quando si 
+ha a che fare con i linguaggi di programmazione (anche se magari non è la 
+vostra aspirazione) non viene mai detto effettivamente cosa c'è che non va.
+
+\section{Come è diviso un documento}
+Come avete magari già notato nell'esempio, il documento si divide in due parti:
+\begin{itemize}
+    \item la prima, dove ci sono cose tipo \verb!\documentclass{...}! e \verb!
+    \usepackage{...}! viene detta \textbf{preambolo}. In questa sezione 
+    vengono definiti i pacchetti che il documento utilizza (vedremo in 
+    seguito) e il tipo di documento (appena dopo, un po' di pazienza!);
+    \item la seconda, invece, che inizia e finisce rispettivamente con \verb!
+    \begin{document}! e \verb!\end{document}! viene detta \textbf{corpo} e 
+    contiene tutto il testo del documento.
+\end{itemize}
+
+\section{Tipi di documento}
+\LaTeX dà la possibilità di scrivere differenti tipi di documento a seconda delle necessità degli utenti. Il tipo di documento è specificato tramite il comando \verb!\documentclass! a cui, tra parentesi graffe, viene indicato che tipologia si vuole. Le principali tipologie sono:
+\begin{itemize}
+    \item \textbf{article}: è la tipologia più comune, serve per scrivere 
+    piccoli articoli oppure articoli per una rivista;
+    \item \textbf{book}: si utilizza per scrivere documenti lunghi (es. la 
+    tesi) e libri;
+    \item \textbf{report}: anche questa classe è utilizzata per articoli 
+    lunghi;
+    \item \textbf{letter}: per le lettere;
+    \item \textbf{slide}: serve per fare slide, anche se è poco utilizzato;
+    \item \textbf{beamer}: anche questo usato per la creazione di slide.
+\end{itemize}
+
+\subsection{Esempi}
+
+\subsubsection{Esempio di documento book}
+\lstinputlisting{res/sections/examples/esempiobook.tex}
+
+\subsubsection{Esempio di documento report}
+\lstinputlisting{res/sections/examples/esempioreport.tex}
+
+\subsubsection{Esempio di documento beamer}
+\lstinputlisting{res/sections/examples/esempiobeamer.tex}
