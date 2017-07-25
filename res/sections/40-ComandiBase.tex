@@ -23,6 +23,57 @@ necessario aggiungere un altro pacchetto, scrivendo \texttt{\textbackslash
 usepackage[normalem]\{ulem\}}. La parte relativa ai pacchetti verrà trattata 
 meglio più avanti.}.
 
+\section{A spasso nella spaziatura}
+
+È anche utile sapere come andare a capo riga nei momenti giusti e anche come 
+inserire spazi appositamente nel testo. A differenza di Word dove viene 
+commesso il crimine immondo di inserire invii finché non si raggiunge la 
+spaziatura desiderata, in \LaTeX{} è possibile inserire quantità di spazio 
+precise, compiendo un lavoro più pulito.
+
+\subsection{A capo riga}
+
+Esistono diversi comandi per eseguire la stessa azione. In questo caso, essi 
+sono:
+\begin{itemize}
+ \item \verb!\\!
+ \item \verb!\\*!
+ \item \verb!\newline!
+\end{itemize}
+
+È importante far notare che non è possibile eseguire una cosa del genere in 
+\LaTeX{} per andare a capo più volte\footnote{Si, l'abbiamo messo per 
+aumentare il numero di pagine di questa guida.}:
+
+\lstinputlisting{res/examples/abominio.tex}
+
+Esiste un comando specifico per fare ciò, che sarà subito spiegato.
+
+\subsection{Inserire pagine}
+
+L'inserimento di una nuova pagina è molto semplice e il comando per creare una 
+nuova pagina è \verb!\newpage!.
+
+\subsection{Vuoti cosmici nel testo}
+
+Avere delle parti vuote nel testo può essere utile, si pensi solamente per 
+esempio se vogliamo creare una prima pagina diversa, e in generale può servire 
+per personalizzare la pagina.
+
+\paragraph*{Spaziatura verticale} Per far ciò esiste una comando magico, 
+chiamato \verb!\vspace{ }! che permette di eseguire una spaziatura orizzontale 
+del testo. Quantità dello spazio viene misurata solitamente in pixel, quindi ad 
+esempio per inserire una spaziatura verticale di 25px sul testo dovrete 
+scrivere \verb!\vspace{25px}!. Questo produrrà
+
+\vspace{25px}
+
+\noindent che infine è proprio quello che volevamo (si, sopra abbiamo inserito 
+una spaziatura verticale).
+
+\paragraph*{Spaziatura orizzontale} La spaziatura orizzontale si esegue invece 
+con il comando \verb!\hspace{ }! e senza sorprese esegue una spaziatura di tipo 
+orizzontale.
 
 \section{Liste}
 
@@ -53,5 +104,55 @@ Per far capire meglio quanto spiegato verranno illustrati un paio di esempi.
 \lstinputlisting[firstline=0, lastline=6]{res/examples/liste.tex}
 
 \noindent Questo è invece il codice per una lista numerata:
-\lstinputlisting[firstline=8]{res/examples/liste.tex}
-% TODO fare esempio lista puntata e numerata.
+\lstinputlisting[firstline=8, lastline=13]{res/examples/liste.tex}
+
+\subsection{Personalizzare gli elenchi puntati}
+
+Gli elenchi sono interessanti, ma a volte potremmo volere qualcosa di più. 
+Fortunatamente \LaTeX{} è stato progettato anche con questa possibilità, ed è 
+possibile applicare piccoli trucchetti per rendere i propri elenchi puntati 
+``speciali''.
+
+\subsubsection{Item personalizzati}
+
+Gli item possono essere personalizzati e al posto dei punti inserire un simbolo 
+o un nome personalizzato. Vediamo subito un esempio.
+
+Scrivendo a esempio il seguente codice:
+
+\lstinputlisting[firstline=16, lastline=21]{res/examples/liste.tex}
+
+\vspace{\abovedisplayskip}
+
+\begin{minipage}{\linewidth}
+  Che produrrà:
+
+  \begin{itemize}
+    \item[Uno] Questo
+    \item[Due] elenco
+    \item[Tre] risulta
+    \item[Quattro] personalizzato
+  \end{itemize} 
+ 
+\end{minipage}
+
+\vspace{\belowdisplayskip}
+
+
+\noindent Come possiamo notare, non sempre l'aspetto che otteniamo è bello, ma 
+questo è un altro discorso.
+
+\subsubsection{Personalizzare gli elenchi puntati}
+
+A volte il classico pallino degli elenchi puntati è proprio brutto, e vorremmo 
+sostituirlo con qualcosa di diverso.
+Anche questa operazione è piuttosto semplice, e va eseguita nel preambolo.
+
+\noindent Il codice da inserire è il seguente:
+
+\verb!\renewcommand{\labelitemi}{$\ast$}!
+
+\noindent Questo ci modificherà tutti gli elenchi puntati, mettendo al posto 
+del classico pallino un asterisco, ``*''. Ci sono altre opzioni, come per 
+esempio \verb!$\bullet$!, \verb!$\cdot$! e \verb!$\diamond$!.
+
