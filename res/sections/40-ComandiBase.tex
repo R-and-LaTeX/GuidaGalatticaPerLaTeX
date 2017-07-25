@@ -216,3 +216,30 @@ documento orientato orizzontalmente. Per farlo ci sono due modi:
 
 \end{minipage}
 \vspace{\belowdisplayskip}
+
+\section{Tabelle}
+
+Siamo arrivati ad un argomento spinoso: le tabelle. Come potete immaginare, la 
+rappresentazione di una tabella in un documento di testo non dev'essere nulla 
+di semplice. Immaginate con \LaTeX{}, dove c'è la possibilità di specificare le 
+linee da visualizzare e di poter dire come specificare la formattazione del 
+testo all'interno di ogni cella: insomma, un vero disastro.
+A spezzare una lancia a favore delle tabelle in \LaTeX{} c'è la loro estrema 
+flessibilità e personalizzazione: vedremo com'è possibile creare tabelle molto 
+avanzate, senza rischiare che si disintegrino alla prima modifica.
+
+\subsection{Tabelle semplici}
+
+Iniziamo con una tabella semplice. Realizzare una tabella senza troppe pretese 
+è semplice dopo che si è capito come funziona.
+
+Prima di tutto, per dichiarare che si sta creando una tabella bisogna scrivere
+\verb!\begin{table}[ ]!, dove all'interno delle parentesi quadre è possibile 
+specificare la posizione di dove vogliamo la tabella. Se vogliamo la tabella 
+nella posizione di dove la stiamo dichiarando scriveremo \verb![H]!.
+
+Dopodiché bisogna dire che vogliamo una tabulazione, e possiamo specificare il 
+numero di colonne che vogliamo avere. Per fare ciò scriveremo 
+\verb!\begin{tabular}{}!, dove nel secondo paia di \verb!{ }! specificheremo il 
+numero di colonne. Vedremo più avanti nel dettaglio questa parte, per il 
+momento fidatevi di colui che sta scrivendo.
