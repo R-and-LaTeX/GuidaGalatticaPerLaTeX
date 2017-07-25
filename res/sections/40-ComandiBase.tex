@@ -163,6 +163,18 @@ una spaziatura verticale).
 con il comando \verb!\hspace{ }! e senza sorprese esegue una spaziatura di tipo 
 orizzontale.
 
+\subsection{Riempire i vuoti cosmici}
+
+Ripensandoci, alla fine non è proprio così brutto alle volte riempire quel 
+freddo spazio bianco che avvinghia i poveri elementi del nostro amato 
+documento. Siccome siamo a bordo della nostra nave spaziale, è di certo 
+equipaggiata con degli strumenti che ci permettono di fare ciò. Questi 
+strumenti in \LaTeX{} si chiamano \texttt{hfill} e \texttt{vfill}, e servono 
+rispettivamente per riempire spazi orizzontali e verticali. Questa descrizione 
+sembra un poco povera ed è normale mettere la loro utilità in discussione, ma 
+vedremo che questi due strumenti si riveleranno utili quando andremo a 
+manipolare immagini ed ad inserirle.
+
 \subsection{Orientare le pagine}
 
 No, non stiamo parlando come trovare far trovare la posizione alle pagine che si 
@@ -180,5 +192,27 @@ ruotata di 90 gradi.
 \begin{minipage}{\linewidth}
   \noindent Vediamo un esempio completo:
   \lstinputlisting{res/examples/paginaRuotata.tex}
+\end{minipage}
+\vspace{\belowdisplayskip}
+
+\subsection{Ma io voglio tutto il documento orizzontale!}
+
+E va bene, non c'è bisogno di scaldarsi tanto! Ora vediamo come creare un 
+documento orientato orizzontalmente. Per farlo ci sono due modi:
+\begin{enumerate}
+ \item Impostando la rotazione direttamente in \texttt{documentclass}
+ \item Impostando la rotazione tramite il pacchetto \texttt{geometry}
+\end{enumerate}
+
+
+\vspace{\abovedisplayskip}
+\begin{minipage}{\linewidth}
+  \paragraph*{Impostando la rotazione da geometry}
+  
+  La rotazione del documento da \texttt{geometry} è impostabile in questa 
+  maniera:
+  \lstinputlisting{res/examples/documentoRuotato.tex}
+
+
 \end{minipage}
 \vspace{\belowdisplayskip}
