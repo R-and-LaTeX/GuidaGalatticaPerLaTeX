@@ -2,10 +2,10 @@
 
 \section{Windows e TeXnicCenter}
 
-Durante la prefazione (che nessuno di voi avr\`a certamente letto) abbiamo
+Durante la prefazione (che nessuno di voi avrà certamente letto) abbiamo
 parlato di IDE. Per il nostro corso ne utilizzeremo uno, molto semplice da
 usare ma anche molto pratico. Si chiama \textit{TeXnicCenter}, e in questo
-capitolo vedremo un attimo le sue funzionalit\`a, giusto per prendere mano
+capitolo vedremo un attimo le sue funzionalità, giusto per prendere mano
 con l'ambiente che dovremo usare.
 
 Prima di tutto, alla apertura del programma ci troveremo ad una schermata
@@ -18,26 +18,70 @@ vuota, in cui possiamo vedere diversi bottoni.
 \end{figure}
 
 Come possiamo vedere dall'immagine\footnote{Sappiamo che si vede poco
-ma questo \`e il meglio che siamo riusciti a fare} notiamo partendo da in alto
+ma questo è il meglio che siamo riusciti a fare} notiamo partendo da in alto
 a sinistra e scorrendo verso destra che inizialmente troviamo dei bottoni per
 gestire il progetto (o per crearne di nuovi).
-Abbiamo subito dopo le opzioni per la compilazione: il men\`u a tendina ci
+Abbiamo subito dopo le opzioni per la compilazione: il menù a tendina ci
 permette di selezionare che tipo di output vogliamo (se PDF o altri formati) e
-i bottoni accanto a questo men\`u ci permettono di lanciare la compilazione
+i bottoni accanto a questo menù ci permettono di lanciare la compilazione
 del progetto.
 Nella seconda riga troviamo le impostazioni per aggiungere elenchi puntati e
 numerati, seguiti dai bottoni per aggiungere immagini e tabelle. Nel penultimo
 riquadro ci sono i classici bottoni per impostare gli stili di formattazione
 (quelli che siamo abituati ad avere in Word per intenderci).
 Alla fine troviamo i bottoni per l'inserimento di formule matematiche, che
-tratteremo pi\`u avanti in questa guida.
+tratteremo più avanti in questa guida.
 
 \subsection{Creare un progetto}
 
 Iniziamo ora la creazione di un progetto.
 Clicchiamo su \texttt{New Project} e selezioniamo l'unico modello diponibile,
 ovvero quello vuoto. Spuntiamo la casellina \texttt{Uses BibTeX} nella sezione
-\texttt{Features}, e diamo un nome al nostro progetto. Fatto ci\`o il bottone
-\texttt{Ok} dovrebbe essersi sbloccato, e lo clicchiamo. Il programma creer\`a
+\texttt{Features}, e diamo un nome al nostro progetto. Fatto ciò il bottone
+\texttt{Ok} dovrebbe essersi sbloccato, e lo clicchiamo. Il programma creerà
 le basi necessarie per cominciare un nuovo progetto!\footnote{Nota, se volete
 potete selezionarvi il percorso dove salvare il progetto che preferite.}
+Il progetto che avremo davanti è però vuoto, e consisterà di un unico file: per 
+progetti \LaTeX{} grandi è generalmente buona pratica separare quelle che sono 
+le impostazioni del progetto (come configurazione dei pacchetti e importazione 
+degli stessi) dal contenuto (ovvero quello che è il vero e proprio documento). 
+Questo permette poi di eseguire modifiche più facilmente, e di avere un maggior 
+ordine nel progetto stesso.
+La struttura consigliata potrebbe essere:
+\begin{verbatim}
+ main.tex
+ ...
+ res/
+ -- config/
+ ---- config.tex
+ ---- package.tex
+ -- sections/
+ -- img/
+ listOfSections.tex
+\end{verbatim}
+
+Spiegheremo brevemente perché:
+\begin{itemize}
+  \item Il \texttt{main.tex} è buona pratica che contenga solo il codice 
+necessario per importare i vari pezzi del progetto, e per darne le informazioni 
+di base
+  \item In \texttt{res/} ci saranno le risorse vere e proprie del progetto, che 
+sono composte dai file di configurazione, dalle varie immagini e da altri file 
+TeX, che possono rappresentare capitoli o parti (la suddivisione è a proprio 
+piacimento)
+  \begin{itemize}
+   \item In \texttt{config/} abbiamo il file dove configurare i vari pacchetti 
+(per esempio scriviamo li se preferiamo avere i link di colore rosso al posto 
+di blu), mentre nell'altro file, \texttt{package.tex} abbiamo tutte le 
+importazioni necessarie per far compilare il documento. In questa maniera, se 
+un pacchetto dovesse a detta del compilatore risultare mancante potremmo subito 
+controllare se avrà ragione o meno\footnote{E l'avrà perché i computer sono 
+macchine, e le macchine se programmate bene hanno la tendenza e non sbagliare.}
+  \item In \texttt{img} metteremo tutte le immagini, così da avere un unico 
+posto dove salvarle e eviteremo in questa maniera di spargerle su tutto il 
+progetto.
+  \item \texttt{listOfSections} grazie alla \textit{keyword} \verb!\include! 
+possiamo includere diversi file, ed è consigliato includerli qui % TODO finish
+  \end{itemize}
+
+\end{itemize}
