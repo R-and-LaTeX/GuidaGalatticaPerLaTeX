@@ -175,9 +175,12 @@ sembra un poco povera ed è normale mettere la loro utilità in discussione, ma
 vedremo che questi due strumenti si riveleranno utili quando andremo a 
 manipolare immagini ed ad inserirle.
 
+\newpage
+\begin{landscape}
+
 \subsection{Orientare le pagine}
 
-No, non stiamo parlando come trovare far trovare la posizione alle pagine che si 
+No, non stiamo parlando di come far trovare la posizione alle pagine che si 
 sono perse, ma vi spiegheremo come sia possibile avere pagine orientate in 
 maniera orizzontale in un documento con pagine verticali. Vedremo poi come 
 invece applicare un'orientazione orizzontale ad un intero documento.
@@ -217,6 +220,8 @@ documento orientato orizzontalmente. Per farlo ci sono due modi:
 \end{minipage}
 \vspace{\belowdisplayskip}
 
+\end{landscape}
+\newpage
 \section{Tabelle}
 
 Siamo arrivati ad un argomento spinoso: le tabelle. Come potete immaginare, la 
@@ -235,11 +240,40 @@ Iniziamo con una tabella semplice. Realizzare una tabella senza troppe pretese
 
 Prima di tutto, per dichiarare che si sta creando una tabella bisogna scrivere
 \verb!\begin{table}[ ]!, dove all'interno delle parentesi quadre è possibile 
-specificare la posizione di dove vogliamo la tabella. Se vogliamo la tabella 
-nella posizione di dove la stiamo dichiarando scriveremo \verb![H]!.
+specificare la posizione di dove vogliamo la tabella. Se la vogliamo nella 
+posizione di dove la stiamo dichiarando scriveremo \verb![H]!\footnote{Nota 
+che è necessario importare il pacchetto \texttt{float}. Se non volete farlo, 
+potete scrivere \texttt{h!} che vi darà un risultato simile}.
 
 Dopodiché bisogna dire che vogliamo una tabulazione, e possiamo specificare il 
 numero di colonne che vogliamo avere. Per fare ciò scriveremo 
 \verb!\begin{tabular}{}!, dove nel secondo paia di \verb!{ }! specificheremo il 
 numero di colonne. Vedremo più avanti nel dettaglio questa parte, per il 
-momento fidatevi di colui che sta scrivendo.
+momento fidatevi.
+
+\vspace{\abovedisplayskip}
+\begin{minipage}{\linewidth}
+  \subsubsection{Esempietto}
+  
+  Vediamo come creare una semplice tabella:
+  \lstinputlisting{res/examples/tabellaSemplice.tex}
+
+
+\end{minipage}
+\vspace{\belowdisplayskip}
+
+
+Che risulterà in questa tabella: 
+\begin{table}[H]
+\centering
+\begin{tabular}{llll}
+Articoli      & Identificativo & Quantità & Costo \\
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+Raccoglitori  & Ufficio        & 30       & 12 \euro{} 
+\end{tabular}
+\caption{Una tabella d'esempio}
+\label{tabella:esempio}
+\end{table}
+
