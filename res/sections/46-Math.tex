@@ -1,0 +1,72 @@
+\chapter{Formule matematiche}
+Una delle cose veramente buone di \LaTeX{} è che ci dà la possibilità di scrivere le formule matematiche in maniera molto bella... Però c'è una sfilza lunghissima di comandi da utilizzare in base alle necessità. Per questo vedremo solamente la parte essenziale e per i vari simboli rimanderemo a questo indirizzo \url{https://it.wikipedia.org/wiki/Aiuto:Formule_matematiche_TeX}.
+
+\section{La modalità matematica}
+Ci sono due ambienti che ci permettono di scrivere formule matematiche. Il primo permette di scrivere formule \textit{inline} e viene aperto e chiuso da \verb!$! oppure rispettivamente da \verb!\(! e \verb!\)!. Esempio:
+\begin{lstlisting}
+La terna pitagorica \`e $x^2+y^2=z^2$ %uguale a \(x^2+y^2=z^2\)
+\end{lstlisting}
+Produrra questo risultato:\\
+La terna pitagorica \`e $x^2+y^2=z^2$
+\\ \par
+Con il secondo ambiente, invece, la formula viene scritta in una nuova linea, centrata in mezzo alla pagina. Questo è aperto e chiuso da \verb!$$! oppore rispettivamente da \verb!\[! e \verb!\]!. Esempio:
+\begin{lstlisting}
+La terna pitagorica \`e $$x^2+y^2=z^2$$ %uguale a \[x^2+y^2=z^2\]
+\end{lstlisting}
+Produrra questo risultato:\\
+La terna pitagorica \`e $$x^2+y^2=z^2$$
+
+\section{Apici e pedici}
+Spesso nelle formule (vedi gli esempi sopra) abbiamo apici e pedici. Nella modalità matematica è possibile inserirli con i caratteri \verb!^! e \verb!_!. Il testo che deve essere apice o pedice deve essere specificato tra graffe se questo è composto da più di un carattere. Esempio:
+\begin{lstlisting}
+$$y^{a+b} = x_1 + x_{01}^2$$
+\end{lstlisting}
+Produrra questo risultato:\\
+$$y_1^{a+b} = x_{01} + x_{02}^2$$
+
+\section{Ambienti utili}
+
+\subsection{Equazioni}
+L'ambiente specificato con \verb!\begin{equation}...\end{equation}! permette di scrivere formule in maniera analoga a \verb!$$!, ma, in più, numera le formule.
+\begin{lstlisting}
+\begin{equation}
+    y^{a+b} = x_1 + x_{01}^2
+\end{equation}
+\end{lstlisting}
+Produrra questo risultato:\\
+\begin{equation}
+    y^{a+b} = x_1 + x_{01}^2
+\end{equation}
+\par
+Se si ha inoltre la necessità di centrare le formule, invece, perchè occupano più riche è possibile usare l'ambiente \verb!align!. Esempio:
+\begin{lstlisting}
+\begin{align}
+    (a+b)(a-b) &= a^2 - ab + ab + b^2 \\
+    &= a^2 - b^2
+\end{align}
+\end{lstlisting}
+Produrra questo risultato:\\
+\begin{align}
+    (a+b)(a-b) &= a^2 - ab + ab + b^2 \\
+    &= a^2 - b^2
+\end{align}
+
+\subsection{Definizione per casi}
+L'ambiente \verb!cases! ci aiuta nel caso si voglia definire, per esempio, una funzione per casi. Esempio:
+\begin{lstlisting}
+$$
+f(x) = \begin{cases}
+    1 &\text{se } x > 0 \\
+    0 & \text{se } x = 0 \\
+    -1 &\text{se } x < 0 \\
+\end{cases}
+$$
+\end{lstlisting}
+Produrra questo risultato:\\
+$$
+f(x) = \begin{cases}
+    1 &\text{se } x > 0 \\
+    0 & \text{se } x = 0 \\
+    -1 &\text{se } x < 0 \\
+\end{cases}
+$$
