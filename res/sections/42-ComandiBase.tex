@@ -1,0 +1,66 @@
+\section{Immagini}
+Solitamente in un documento si ha la necessità di inserire delle immagini o 
+per spiegare meglio il contenuto o per abbellire il testo. Per inserire le 
+immagini in \LaTeX{} solitamente si utlizza il pacchetto \verb!\graphicx! (
+quindi nel preambolo è necessario inserire \verb!\usepackage{graphicx}!). Il 
+comando da utilizzare è \verb!\includegraphics[opzioni]{img_path}!, dove le 
+opzioni sono opzionali\footnote{No non ci scusiamo per il gioco di parole} e 
+le più comuni sono:
+\begin{itemize}
+    \item \textbf{width}: per la larghezza;
+    \item \textbf{height}: per l'altezza;
+    \item \textbf{scale}: per scalare l'immagine (1.0 è il 100\%);
+    \item \textbf{keepaspectratio}: per mantenere lo stesso rapporto 
+    larghezza-altezza dell’immagine originale
+\end{itemize}
+\verb!img_path! serve per specificare il percorso dell'immagine da includere, 
+che può essere assoluto o relativo (meglio specificare il percorso relativo, 
+specificare il percorso assoluto è un po' come passare per casa se devi andare 
+dall'aula al bagno). È possibile anche specificare nel preabolo, tramite il 
+comando \verb!\graphicspath{{default_path}}! il percorso di default per le 
+immagini. In questo modo al posto di un percorso nel comando 
+\verb!\includegraphic! è possibile passare il nome dell'immagine voluta.
+
+Come per le tabelle abbiamo bisogno di un ``ambiente'' che contenga le 
+immagini, che in questo caso sarà \verb!\begin{figure}...\end{figure}!.
+
+È buona norma accompagnare le immagini con una didascalia che le spieghi. Per 
+fare ciò ci viene in aiuto il comando \verb!\caption{...}! che accetta tra le 
+parentesi graffe del testo per descrivere le immagini.
+
+Attenzione! Non tutti i formati di immagini sono supportati! I formati 
+supporti sono \textbf{pdf}, \textbf{png} e \textbf{jpg}. Nelle nuove 
+installazioni di \LaTeX{} è possibile utilizzare però anche il formato \textbf{
+eps}.
+
+Di seguito possiamo vedere un esempio di come inserire un'immagine con 
+didascalia in un documento \LaTeX{}.
+\lstinputlisting{res/examples/esempioimmagine.tex}
+
+
+
+\subsection{Affiancare le immagini}
+(Fate un respiro profondo che sennò qui si perde il proprio posto in paradiso) 
+\\
+Per poter affiancare immagini è possibile utilizzare il \textit{subfig} (Non è 
+l'unica soluzione, ma è una delle più semplici). Questo permette di creare 
+``delle piccole immagini'' all'interno dell'ambiente 
+\verb!\begin{figure}...\end{figure}!. Specificando grandezza delle immagini o 
+utilizzando i comandi per iniziare una nuova riga. È probabilmente più facile 
+con un esempio.
+\lstinputlisting{res/examples/esempio4immagini.tex}
+Nell'esempio viene utilizzato il comando \verb!\subfloat! per posizionare le 
+quattro immagini al quale, tra parentesi quadre, viene specificata la 
+didascalia della singola immagine, mentre tra parentesi graffe viene indicata 
+l'immagine da mostrare. Con il comando \verb!\caption! viene, infine, 
+specificata la didascalia per le immagini raggruppate.
+
+\subsection{Affiancare testo e immagini}
+Sì si può anche affiancare testo e immagini. Serve? Bho vedete voi. In ogni 
+caso è possibile utilizzando il \textit{package} \verb!wrapfig!. Questo 
+funziona in modo analogo al solito modo di inserire le immagini, tranne che 
+l'ambiente sarà \verb!\begin{wrapfig}{pos}{dim}...\end{wrapfig}! dove \texttt{
+pos} può essere \textbf{r} o \textbf{l} e \texttt{dim} serve per specificare 
+le dimensioni di quanto l'immagine deve ``affiancarsi'' al testo. Di seguito un 
+esempio. 
+\lstinputlisting{res/examples/esempiotestoafianco.tex}
