@@ -277,3 +277,115 @@ Raccoglitori  & Ufficio        & 30       & 12 \euro{}
 \label{tabella:esempio}
 \end{table}
 
+A questo punto ci piacerebbe però avere dei bordi sulla tabella. Niente di più 
+facile! Per aggiungere i bordi alla tabella dobbiamo usare \verb!\hline! per le 
+linee orizzontali, mentre per avere le linee verticali (ovvero tra colonne) 
+dobbiamo modificare il \verb!\begin{tabular}{llll}! nella seguente 
+maniera\footnote{Nota che in \LaTeX{} l'utilizzo di linee orizzotali è a 
+quanto pare sconsigliato in quanto peggiora le lebbilità della tabella.}:
+
+\vspace{\abovedisplayskip}
+\begin{minipage}{\linewidth}
+  \subsubsection{Esempietto}
+  
+  Vediamo come creare una semplice tabella:
+  \lstinputlisting{res/examples/tabellaConBordi.tex}
+
+
+\end{minipage}
+\vspace{\belowdisplayskip}
+
+Che ci darà il seguente risultato:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+Articoli      & Identificativo & Quantità & Costo \\
+\hline
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+\hline
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+\hline
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+\hline
+Raccoglitori  & Ufficio        & 30       & 12 \euro{}\\
+\hline
+\end{tabular}
+\caption{Una tabella d'esempio con i bordi}
+\label{tabella:esempio2}
+\end{table}
+
+Una nota importante da considerare è la possibilità di personalizzare dove 
+posizionare i bordi o meno: per la vostra curiosità, provate a rimuovere uno o 
+due \verb!\hline! o qualche sbarretta sull'inizializzazione della tabella, e 
+vedrete come la tabella si ``evolve''.
+
+\subsection{Tabelle su più pagine}
+
+A volte capita di avere una grande mole di dati da mettere in una tabella, e 
+che questi dati non ci stiano su una pagina. Se avete provato a fare una 
+tabella più grande di una pagina avrete sicuramente notato di come questa 
+continui ad andare anche fuori dal termine della pagina stessa, sbattendosene 
+di qualsiasi bordo presente. Siccome questa \textit{feature} non piaceva a 
+tutti, qualche programmatore brufoloso e annoiato nel seminterrato di sua madre 
+si è inventato una bella sera\footnote{L'habitat preferito per un 
+programmatore.} di implementare le tabelle su più pagine e di pubblicare ciò su 
+un pacchetto a parte, \texttt{longtable}.
+Per usare \texttt{longtable} quindi bisogna includere l'omonimo pacchetto nel 
+preambolo del documento, con il solito comando a cui siamo abituati, ovvero 
+\verb!\usepackage{longtable}!.
+La creazione di una tabella sarà simile a quella di prima, con qualche piccola 
+differenza che ora vedremo in questo esempio:
+\lstinputlisting{res/examples/tabellaLunga.tex}
+
+Questa risulta in:
+
+\begin{center}
+\begin{longtable}{llll}
+Articoli      & Identificativo & Quantità & Costo \\
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+Raccoglitori  & Ufficio        & 30       & 12 \euro{}\\
+
+\caption{Una tabella multipagina d'esempio}
+\label{tabella:esempio_tabella_lunga}
+\end{longtable}
+\end{center}
+
+Le tabelle su più pagine possono diventare estremamente complicate, e quello 
+che abbiamo presentato è solamente un accenno, giusto per farvi vedere come 
+funzionano e che esistono.
+Alleghiamo qui un esempio di come una tabella può evolvere in qualcosa di 
+estremamente complicato ma molto personalizzato. Questa è da considerarsi 
+stregoneria, e per i propositi del nostro corso non verrà spiegata.
+
+\lstinputlisting{res/examples/tabellaStregoneria.tex}
