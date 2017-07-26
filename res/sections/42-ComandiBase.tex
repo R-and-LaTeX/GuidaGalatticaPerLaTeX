@@ -77,6 +77,22 @@ Quando si inseriscono delle immagini e se ne fa riferimento nel testo oppure qua
 
 \subsubsection{Buone regole per gli identificativi}
 Solitamente, agli identificativi utilizzati dalle \verb!label! e \verb!ref! vengono anteposti alcuni caratteri che permettono di identificare che tipo di oggetto è referenziato. 
+\begin{table}[]
+\centering
+\begin{tabular}{ll}
+\hline
+\textbf{prefisso} & \textbf{tipologia}         \\ \hline
+sec:              & section                    \\ \hline
+subsec:           & subsection                 \\ \hline
+fig:              & figure                     \\ \hline
+tab:              & tabella                    \\ \hline
+eq:               & formula                    \\ \hline
+lst:              & codice                     \\ \hline
+itm:              & elementi di lista numerata \\ \hline
+alg:              & algoritmo                  \\ \hline
+app:              & appendice                  \\ \hline
+\end{tabular}
+\end{table}
 
 \subsection{Collegamenti al Web}
 Il pacchetto che permette l'inserimento in maniera corretta in un documento \LaTeX{} di \textit{link} o \textit{URL} è \verb!hyperref!. Ci sono due modalità principali per inserire queste informazioni. La prima è \verb!\url{indirizzo}!, con la quale verrà mostrato l'URL in formato \textit{monospace}, pensato anche per documenti che devono essere stampati, la seconda è \verb!\href{indirizzo}{testo_da_mostrare}!, la quale non mostrerà esplicitamente l'indirizzo, ma mostrerà solamente il testo voluto (come succede nei siti Web per capirci). 
