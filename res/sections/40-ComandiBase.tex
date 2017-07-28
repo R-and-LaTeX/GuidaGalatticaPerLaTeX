@@ -395,3 +395,71 @@ estremamente complicato ma molto personalizzato. Questa è da considerarsi
 stregoneria, e per i propositi del nostro corso non verrà spiegata.
 
 \lstinputlisting{res/examples/tabellaStregoneria.tex}
+
+\subsection{Altre informazioni sulle tabelle}
+
+Se pensavate fosse tutto finito qui, vi state sbagliando di grosso. Il signor
+\LaTeX{} permette di personalizzare ulteriormente le nostre tabelle, e qui
+verranno spiegati alcuni piccoli trucchi che pensiamo possano essere utili a
+voi lettori.
+
+\subsubsection{Posizionamento del testo nelle celle}
+
+A volte potrebbe essere utile avere la possibilità di centrare o posizionare il
+testo di una tabella in maniera particolare. Questo è ovviamente possibile, e
+per farlo bisogna modificare il modo in cui dichiariamo inizialmente la
+tabella. Quando mettiamo la dicitura \texttt{l} in
+\verb!\begin{tabular}{llll}! stiamo dicendo infatti che vogliamo che il testo
+di tutte le celle nella tabella sia orientato a sinistra. Esistono diverse
+opzioni per questo comando, che sono \texttt{l}, \texttt{c} e \texttt{r}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+l & colonne aggiustate a sinistra \\ \hline
+c & colonne centrate              \\ \hline
+r & colonne aggiustate a destra   \\ \hline
+\end{tabular}
+\caption{Elenco delle opzioni che si possono mettere nella voce
+\texttt{tabular}.}
+\label{tab:elenco_opzioni_tabella}
+\end{table}
+
+\subsubsection{Impostare manualmente la grandezza delle celle}
+
+Se non viene specificato nessuna impostazione, in \LaTeX{} la larghezza delle
+celle viene impostata automaticamente in maniera tale da ottenere il miglior
+effetto visibile per il lettore. Sfortunatamente, questo non sempre capita, e a
+volte impostare manualmente la larghezza delle colonne può risultare utile.
+L'impostazione della larghezza avviene sempre nella linea
+\verb!\begin{tabular}{ }!, e al posto di \texttt{l}, \texttt{c} e \texttt{r}
+andremo a mettere un altro parametro, che si chiama \texttt{p}.
+
+\paragraph*{Come funziona la keyword \texttt{p}} La \textit{keyword} \texttt{p}
+ha bisogno di un parametro per funzionare, e questo parametro è la larghezza in
+cm che si vuole della colonna. Vediamo subito un esempio per chiarirci le idee:
+
+\vspace{\abovedisplayskip}
+\begin{minipage}{\linewidth}
+  \lstinputlisting{res/examples/tabellaSpoporzionata.tex}
+\end{minipage}
+\vspace{\belowdisplayskip}
+
+\noindent Questo codice ci darà il seguente risultato:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{2cm}|p{10cm}|}
+\hline
+È questa colonna sporpozionata? & Si \\ \hline
+\end{tabular}
+\caption{Una tabella con la larghezza delle colonne personalizzata}
+\label{tab:es_spoporzionata}
+\end{table}
+
+\noindent Come possiamo notare, bisogna prestare attenzione quando si impostano
+manualmente le dimensioni delle varie colonne, perché l'aspetto potrebbe
+risentirne (come in questo caso). È buona pratica quindi, se vogliamo impostare
+la dimensione delle colonne manualmente, eseguire delle prove visuali in modo
+da vedere se il risultato ottenuto ci soddisfa.
