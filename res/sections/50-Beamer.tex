@@ -32,7 +32,7 @@ temi}
 
 \section{I comandi di base}
 
-\paragraph*{Creare e dare titoli a frame}
+\subsection{Creare e dare titoli a frame}
 Beamer, essendo solo uno stile di documento per \LaTeX{}, eredita tutti i
 comandi dello stesso, aggiungendone di nuovi o migliorando quelli che esistono
 già. Un comando nuovo che abbiamo visto subito nell'esempio che abbiamo fatto
@@ -50,10 +50,95 @@ alla nostra slide di saluto potremmo modificare la slide nella maniera seguente:
 che dovreste!) potrete notare cosa in alto a sinistra è successo: una scritta
 più grande con colori diversi dal testo è apparsa.
 
-\paragraph*{Creazione slide iniziale}
+\subsection{Creazione slide iniziale}
 Tutte le presentazioni iniziano con una slide iniziale: di solito si mette il
 titolo dell'argomento di cui si parlerà seguito da un sottotitolo che
 introdurrà l'ascoltatore al tipo di discussione che sta partecipando.
 Infine l'autore, l'istituzione (se sta presentando per qualche istituzione) e
 la data della presentazione stessa dovrebbero esserci sempre. Un esempio di una
 classica slide iniziale lo possiamo vedere in Figura~\ref{img:screen_beamer}.
+
+\paragraph*{Esempio} Vediamo ora come fare dal punto di vista pratico:
+
+\lstinputlisting{res/examples/beamertitolo.tex}
+
+\paragraph*{Analisi dei comandi}
+Vediamo un attimo i comandi che sono presenti nell'esempio appena esposto:
+\begin{itemize}
+ \item \verb!\title{ }! ci permette, senza sorprese, di inserire il titolo del
+documento
+ \item \verb!\subtitle{ }! anche qui c'è poco da spiegare: questo comando
+inserisce il sottotitolo al documento
+ \item \verb!\date{ }! fornisce la funzionalità per inserire la data nella
+presentazione: è importante notare come la data può essere del formato che più
+ci piace, come ad esempio \textit{1/11/1111} oppure \textit{1 novembre
+1111}.\footnote{Nonostante la data molto \textit{cool}, si ipotizza che a
+quell'epoca le presentazioni al proiettore non andassero per la maggiore.}
+ \item \verb!\institute{ }! permette di inserire l'istituzione per cui
+presentiamo (o andiamo a presentare)
+\end{itemize}
+
+In generale, tutti i campi qui presenti sono facoltativi: possiamo anche non
+mettere il titolo, ma con ovvie conseguenze. Inoltre questi campi oltre a
+servire per creare la prima pagine del documento possono contribuire a fornire
+\textit{metadata}\footnote{\url{https://it.wikipedia.org/wiki/Metadato}} al PDF
+che verrà poi generato, per far si che ciò avvenga basterà importare il
+pacchetto \texttt{hyperref} con l'opzione \texttt{pdfusetitle}.
+
+\section{Temi}
+Applicare un tema ad una presentazione è una buona pratica per creare una
+presentazione più piacevole agli ascoltatori, ed è quindi un modo per tenerli
+in qualche modo anche attenti a quello che state dicendo\footnote{A meno che
+quello che state dicendo non sia terribilmente noioso.}.
+Per applicare un tema esistono delle \textit{keyword} che devono essere
+utilizzate. L'applicazione di un tema si suddivide in due fasi: selezione del
+tema stesso e, se disponibili, selezione di un set di colori possibili per quel
+tema. I comandi sono:
+\begin{itemize}
+ \item \verb!\usetheme{ }! usato per selezionare il tema
+ \item \verb!\usecolortheme{ }! usato per selezionare il set di colori per il
+tema
+\end{itemize}
+
+\subsection{Temi predefiniti}
+I temi predefiniti sono comodi quando non si ha troppa voglia di farsene uno, o
+quando semplicemente quello che cerchiamo è già pronto. I temi predefiniti che
+Beamer offre sono pensati per essere semplici e diretti: non troveremo quindi
+stili all'ultimo grido, ma grafici semplici tra cui potremmo scegliere diversi
+abbinamenti di colore. Siccome elencare tutti i temi in questo documento non
+sarebbe fattibile, invitiamo il nostro affezionato utente ad aprire il proprio
+browser preferito ed a puntarlo a questo indirizzo web
+\url{http://deic.uab.es/~iblanes/beamer_gallery/}, dove i temi possono essere
+esplorati secondo diverse modalità (per tema, per colore oppure per entrambe
+le categorie).
+Proviamo ora ad applicare un tema alla nostra prima pagina, e vediamo che
+succede!
+
+\lstinputlisting{res/examples/beamertema.tex}
+
+\noindent Come possiamo vedere, le nostre slide cominciano a farsi fare sempre
+più carine. Provate pure a cambiare i set di colori e il tema a vostro
+piacimento, e potrete notare come non dovrete cambiare il contenuto: infatti in
+\LaTeX{} i temi non influenzano sulla sostanza della presentazione, come
+invece potrebbe accadere in una presentazione PowerPoint per esempio: questo ci
+permette di poter cominciare a scrivere contenuto anche se non abbiamo ancora
+deciso che aspetto dovrà avere la nostra presentazione.
+
+\section{Transizioni ed effetti}
+Una cosa utile durante una presentazione potrebbe essere nascondere parte del
+testo all'ascoltatore, in modo da presentare il contenuto di una slide in
+maniera controllara, permettendogli di assorbire tutto quello che viene
+presentato. Questo obiettivo può essere ottenuto in diverse maniere: si
+potrebbero copia-incollare diversi \textit{frame} e aggiungere la parte nuova
+ogni volta, ma non è una soluzione pratica. \LaTeX{} infatti fornisce la
+possibilità di inserire le transizioni. Noi vedremo come applicarle sugli
+elenchi puntati.
+
+\subsection{Transizioni per gli elenchi puntati}
+Come abbiamo già detto, mostrare gradualmente un elenco potrebbe essere
+utile. Ottenere ciò è super semplice, e si fa ponendo dopo \verb!\item! il
+comando \texttt{<n-m>} dove $n$ e $m$ rispettivamente indicano quando deve
+apparire quel punto nella slide e quando deve sparire (nota: $m$ è opzionale e
+può essere omesso).
+
+% TODO inserire un esempio con ``i passi del saluto'' per far vedere come funzia
