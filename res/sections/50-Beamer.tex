@@ -1,0 +1,59 @@
+\chapter{Creare presentazioni: Beamer}
+
+Si, avete letto bene, non vi stiamo prendendo in giro: con \LaTeX{} è possibile
+creare anche delle splendide presentazioni. ``Come si fa?'' immagino vi starete
+chiedendo, e la risposta è usando un formato di documento
+(\verb!\documentclass!) apposito, che si chiama \texttt{beamer}. In questo
+capitolo andreamo ad analizzare un attimo il funzionamento di questa classe,
+che include dei comandi specifici per la creazione di slide e l'inserimento di
+effetti di transizione tra di esse\footnote{\LaTeX{} è in grado di supportare
+transizioni anche nei PDF, dando la possibilità di avere un documento leggibile
+con un comunle lettore di PDF ma contenente anche effetti, a differenza di
+PowerPoint per esempio.}.
+
+\paragraph*{Esempio} Vediamo subito un minuscolo esempio che creerà una slide
+contenente un semplice ``Ciao!'':
+
+\lstinputlisting{res/examples/beamerciao.tex}
+
+\noindent Il risultato che otteniamo non è dei più belli. Un punto molto forte
+di Beamer però è la sua praticamente infinita possibilità di personalizzazione,
+con supporto a temi e a differenti set di colori per ogni tema. Più avanti
+vedremo come selezionarli e creare una tabella degli argomenti automaticamente.
+
+\begin{figure}[t]
+ \centering
+ \includegraphics[scale=0.3]{screenBeamer}
+ \caption{Una presentazione in \LaTeX{} personalizzata: è possibile notare come
+si possa arrivare ad ottenere un alto livello di personalizzazione tramite i
+temi}
+ \label{img:screen_beamer}
+\end{figure}
+
+\section{I comandi di base}
+
+\paragraph*{Creare e dare titoli a frame}
+Beamer, essendo solo uno stile di documento per \LaTeX{}, eredita tutti i
+comandi dello stesso, aggiungendone di nuovi o migliorando quelli che esistono
+già. Un comando nuovo che abbiamo visto subito nell'esempio che abbiamo fatto
+all'inizio del capitolo è il \verb!\begin{frame} ... \end{frame}!, che ci
+permette di creare una nuova slide. Questo comando è ovviamente fondamentale:
+senza di esso non possiamo fare alcuna presentazione. Esiste la possibilità di
+dare un titolo alla slide che stiamo creando, e questo titolo si va a dare
+grazie al comando \verb!\frametitle{ }!, dove all'interno delle parentesi graffe
+andremo ad inserire il testo che vogliamo. Quindi se vogliamo dare un titolo
+alla nostra slide di saluto potremmo modificare la slide nella maniera seguente:
+
+\lstinputlisting{res/examples/beamerciao2.tex}
+
+\noindent Se state provando a compilare gli esempi presenti nella guida (cosa
+che dovreste!) potrete notare cosa in alto a sinistra è successo: una scritta
+più grande con colori diversi dal testo è apparsa.
+
+\paragraph*{Creazione slide iniziale}
+Tutte le presentazioni iniziano con una slide iniziale: di solito si mette il
+titolo dell'argomento di cui si parlerà seguito da un sottotitolo che
+introdurrà l'ascoltatore al tipo di discussione che sta partecipando.
+Infine l'autore, l'istituzione (se sta presentando per qualche istituzione) e
+la data della presentazione stessa dovrebbero esserci sempre. Un esempio di una
+classica slide iniziale lo possiamo vedere in Figura~\ref{img:screen_beamer}.
