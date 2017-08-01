@@ -1,6 +1,6 @@
 \chapter{Ambiente di Lavoro}
 
-Per far funzionare \LaTeX{} sul vostro computer dovete scaricare anche un
+Per far funzionare \LaTeX{} sul vostro computer dovete scaricare un
 compilatore, che potete trovare a questo all'indirizzo
 \url{https://miktex.org/download}. L'installazione è facile ma il completamento
 potrebbe richiedere un po' di tempo. Siate pazienti.
@@ -18,8 +18,8 @@ In ogni caso siete liberi di utilizzare il lettore PDF che più preferite.
 
 Durante la prefazione (che nessuno di voi avrà certamente letto) abbiamo
 parlato di IDE. Per il nostro corso ne utilizzeremo uno (come già detto sopra)
-e in questo capitolo vedremo un attimo le sue funzionalità, giusto per prendere
-mano con l'ambiente che dovremo usare.
+e in questo capitolo vedremo un attimo alcune delle sue funzionalità, giusto
+per prendere mano con l'ambiente che dovremo usare.
 
 Se avete installato TeXnicCenter sul vostro computer per la prima volta e lo
 state aprendo solo ora vi chiederà alcune informazioni riguardo al lettore DVI
@@ -38,6 +38,14 @@ vuota, in cui possiamo vedere diversi bottoni.
   \label{img:principale_texcenter}
 \end{figure}
 
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.6]{texniccenterzoom}
+ \caption{Zoom della schermata principale di TeXnicCenter}
+ \label{img:principale_texcenter2}
+\end{figure}
+
+
 Come possiamo vedere dall'immagine\footnote{Sappiamo che si vede poco
 ma questo è il meglio che siamo riusciti a fare} notiamo partendo da in alto
 a sinistra e scorrendo verso destra che inizialmente troviamo dei bottoni per
@@ -46,10 +54,11 @@ Abbiamo subito dopo le opzioni per la compilazione: il menù a tendina ci
 permette di selezionare che tipo di output vogliamo (se PDF o altri formati) e
 i bottoni accanto a questo menù ci permettono di lanciare la compilazione
 del progetto.
-Nella seconda riga troviamo le impostazioni per aggiungere elenchi puntati e
-numerati, seguiti dai bottoni per aggiungere immagini e tabelle. Nel penultimo
-riquadro ci sono i classici bottoni per impostare gli stili di formattazione
-(quelli che siamo abituati ad avere in Word per intenderci).
+Nella seconda riga troviamo le impostazioni per la creazione di elenchi puntati
+e numerati senza necessità di scrivere codice, seguiti dai bottoni per
+aggiungere immagini e tabelle. Nel penultimo riquadro ci sono i classici bottoni
+per impostare gli stili di formattazione (quelli che siamo abituati ad avere in
+Word per intenderci).
 Alla fine troviamo i bottoni per l'inserimento di formule matematiche, che
 tratteremo più avanti in questa guida.
 
@@ -60,7 +69,7 @@ Clicchiamo su \texttt{New Project} e selezioniamo il modello vuoto. Spuntiamo
 la casellina \texttt{Uses BibTeX} nella sezione \texttt{Features}, e diamo un
 nome al nostro progetto. Fatto ciò il bottone \texttt{Ok} dovrebbe essersi
 sbloccato, e lo clicchiamo. Il programma creerà le basi necessarie per
-cominciare un nuovo progetto!\footnote{Nota, se volete potete selezionarvi il
+cominciare un nuovo progetto!\footnote{Nota, se volete potete selezionare il
 percorso dove salvare il progetto che preferite.}
 Il progetto che avremo davanti è però vuoto, e consisterà di un unico file: per
 progetti \LaTeX{} grandi è generalmente buona pratica separare quelle che sono
@@ -92,9 +101,9 @@ sono composte dai file di configurazione, dalle varie immagini e da altri file
 TeX, che possono rappresentare capitoli o parti (la suddivisione è a proprio
 piacimento)
   \begin{itemize}
-   \item In \texttt{config/} abbiamo il file dove configurare i vari pacchetti
+   \item Abbiamo il file \texttt{config/} dove configurare i vari pacchetti
 (per esempio scriviamo li se preferiamo avere i link di colore rosso al posto
-di blu), mentre nell'altro file, \texttt{package.tex} abbiamo tutte le
+di blu), mentre nell'altro file, \texttt{package.tex}, abbiamo tutte le
 importazioni necessarie per far compilare il documento. In questa maniera, se
 un pacchetto dovesse a detta del compilatore risultare mancante potremmo subito
 controllare se avrà ragione o meno\footnote{E l'avrà perché i computer sono
@@ -168,9 +177,9 @@ seguente contenuto:
 \noindent Anche in questo caso, facciamo attenzione alla voce \texttt{Encoding}
 quando andiamo a salvarlo. Questo file conterrà solamente inclusioni ai veri
 contenuti di testo, permettendoci di escludere parti o riordinarle senza fare
-fastidiosi compia-incolla.
+fastidiosi copia-incolla.
 
-Passiamo ora al file che conterrà veramente il nostro contenuto.
+Passiamo ora al file nel quale mettere veramente il nostro contenuto.
 
 \paragraph*{File \texttt{res/sections/parte1.tex}} Per prima cosa, con Esplora
 Risorse prendiamo l'immagine che più ci piace e copiamola in \texttt{res/img/}
@@ -208,11 +217,12 @@ Selezioniamo anche la spunta ``Here'' e inseriamo una \textit{caption} e una
 
 \paragraph*{Compilazione} Prima di compilare settiamo l'output di compilazione.
 Nel menù a tendina selezioniamo la voce ``LaTeX $\to$ PDF''. Ora clicchiamo il
-5o bottone a partire dal menù (muovendoci da sinistra verso destra). Se abbiamo
-seguito le istruzioni correttamente, si aprirà il visualizzatore PDF con quanto
-abbiamo scritto. Complimenti! Avete creato il vostro primo PDF usando \LaTeX{}.
+quinto bottone a partire dal menù (muovendoci da sinistra verso destra). Se
+abbiamo seguito le istruzioni correttamente, si aprirà il visualizzatore PDF
+con quanto abbiamo scritto. Complimenti! Avete creato il vostro primo PDF
+usando \LaTeX{}.
 
-\begin{figure}[H]
+\begin{figure}[t]
  \centering
  \includegraphics[scale=0.5]{compilation_res}
  \caption{Il risultato che dovremmo ottenere}
