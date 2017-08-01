@@ -61,22 +61,37 @@ caso è possibile utilizzando il \textit{package} \verb!wrapfig!. Questo
 funziona in modo analogo al solito modo di inserire le immagini, tranne che 
 l'ambiente sarà \verb!\begin{wrapfig}{pos}{dim}...\end{wrapfig}! dove \texttt{
 pos} può essere \textbf{r} o \textbf{l} e \texttt{dim} serve per specificare 
-le dimensioni di quanto l'immagine deve ``affiancarsi'' al testo. Di seguito un 
-esempio. 
+le dimensioni di quanto l'immagine deve ``affiancarsi'' al testo. Di seguito 
+un esempio. 
 \lstinputlisting{res/examples/esempiotestoafianco.tex}
 
 
 \section{Note a piè di pagina}
-Spesso capita di dover mettere delle note a piè di pagina, per esempio per mettere un riferimento o spiegare meglio qualcosa\footnote{O solo per distrarre il lettore, come in questo caso}. Per fare ciò è necessario utilizzare il comando \verb!\footnote{...}! specificando tra graffe il testo della nota. \LaTeX{} in automatico si occuperà della numerazione e del posizionamento.
+Spesso capita di dover mettere delle note a piè di pagina, per esempio per 
+mettere un riferimento o spiegare meglio qualcosa\footnote{O solo per 
+distrarre il lettore, come in questo caso.}. Per fare ciò è necessario 
+utilizzare il comando \verb!\footnote{...}! specificando tra graffe il testo 
+della nota. \LaTeX{} in automatico si occuperà della numerazione e del 
+posizionamento.
 
 
 \section{Collegamenti ipertestuali}
 
 \subsection{Collegamenti nel testo}
-Quando si inseriscono delle immagini e se ne fa riferimento nel testo oppure quando si scrive una parte e la si riprende in un'altra sezione del documento si sente la necessità di inserire un collegamento tra le due parti. Per fare ciò è necessario marcare con \verb!\label{...}! a cui si vuole fare riferimento. Tra parentesi graffe un identificativo univoco all'interno del documento. Quando ci si riferisce ad esso, si deve utilizzare \verb!\ref{...}!, specificando tra graffe lo stesso identificativo. È possibile anche fare riferimento alla pagina in cui si trova l'oggetto marcato con \verb!label! utilizzando \verb!\pageref{...}! (e lo stesso identificativo).
+Quando si inseriscono delle immagini e se ne fa riferimento nel testo oppure 
+quando si scrive una parte e la si riprende in un'altra sezione del documento 
+si sente la necessità di inserire un collegamento tra le due parti. Per fare 
+ciò è necessario marcare con \verb!\label{...}! a cui si vuole fare 
+riferimento. Tra parentesi graffe un identificativo univoco all'interno del 
+documento. Quando ci si riferisce ad esso, si deve utilizzare \verb!\ref{...}!
+, specificando tra graffe lo stesso identificativo. È possibile anche fare 
+riferimento alla pagina in cui si trova l'oggetto marcato con \verb!label! 
+utilizzando \verb!\pageref{...}! (e lo stesso identificativo).
 
 \subsubsection{Buone regole per gli identificativi}
-Solitamente, agli identificativi utilizzati dalle \verb!label! e \verb!ref! vengono anteposti alcuni caratteri che permettono di identificare che tipo di oggetto è referenziato. 
+Solitamente, agli identificativi utilizzati dalle \verb!label! e \verb!ref! 
+vengono anteposti alcuni caratteri che permettono di identificare che tipo di 
+oggetto è referenziato. 
 \begin{table}[]
 \centering
 \begin{tabular}{ll}
@@ -95,15 +110,36 @@ app:              & appendice                  \\ \hline
 \end{table}
 
 \subsection{Collegamenti al Web}
-Il pacchetto che permette l'inserimento in maniera corretta in un documento \LaTeX{} di \textit{link} o \textit{URL} è \verb!hyperref!. Ci sono due modalità principali per inserire queste informazioni. La prima è \verb!\url{indirizzo}!, con la quale verrà mostrato l'URL in formato \textit{monospace}, pensato anche per documenti che devono essere stampati, la seconda è \verb!\href{indirizzo}{testo_da_mostrare}!, la quale non mostrerà esplicitamente l'indirizzo, ma mostrerà solamente il testo voluto (come succede nei siti Web per capirci). 
+Il pacchetto che permette l'inserimento in maniera corretta in un documento \
+LaTeX{} di \textit{link} o \textit{URL} è \verb!hyperref!. Ci sono due 
+modalità principali per inserire queste informazioni. La prima è 
+\verb!\url{indirizzo}!, con la quale verrà mostrato l'URL in formato \textit{
+monospace}, pensato anche per documenti che devono essere stampati, la seconda 
+è \verb!\href{indirizzo}{testo_da_mostrare}!, la quale non mostrerà 
+esplicitamente l'indirizzo, ma mostrerà solamente il testo voluto (come 
+succede nei siti Web per capirci). 
 
 \subsubsection{Email}
-Per inserire gli indirizzi email nel testo è preferibile creare questo comando personalizzato, da inserire nel preambolo del documento \verb!\newcommand{\mail}[1]{\href{mailto:#1}{\texttt{#1}}}! (per il momento fidatevi, spiegheremo in seguito come creare i propri comandi). L'utilizzo è molto semplice, infatti nel documento è sufficiente dare il comando \verb!\email{...}! specificando l'indirizzo di posta elettronica voluto.
+Per inserire gli indirizzi email nel testo è preferibile creare questo comando 
+personalizzato, da inserire nel preambolo del documento 
+\verb!\newcommand{\mail}[1]{\href{mailto:#1}{\texttt{#1}}}! (per il momento 
+fidatevi, spiegheremo in seguito come creare i propri comandi). L'utilizzo è 
+molto semplice, infatti nel documento è sufficiente dare il comando 
+\verb!\email{...}! specificando l'indirizzo di posta elettronica voluto.
 
 \subsubsection{Personalizzazione dei link}
-È buona norma, almeno nella creazione dei siti Web, colorare i link con un colore differente dal testo normale, in modo da evidenziare a chi visita la pagina che lì ci si può cliccare. Anche nei documenti non fa male evidenziare questi indirizzi e il pacchetto \verb!hyperref! permette la personalizzazione tramite il comando \verb!\hypersetup{...}! da mettere nel preambolo del documento, al quale devono essere specificate le personalizzazioni volute. Le più importanti sono:
+È buona norma, almeno nella creazione dei siti Web, colorare i link con un 
+colore differente dal testo normale, in modo da evidenziare a chi visita la 
+pagina che lì ci si può cliccare. Anche nei documenti non fa male evidenziare 
+questi indirizzi e il pacchetto \verb!hyperref! permette la personalizzazione 
+tramite il comando \verb!\hypersetup{...}! da mettere nel preambolo del 
+documento, al quale devono essere specificate le personalizzazioni volute. Le 
+più importanti sono:
 \begin{itemize}
-    \item \textbf{colorlinks=false} oppure \textbf{colorlinks=true}, che indica rispettivamente se si vuole che i link vengano riquadrati oppure colorati;
-    \item \textbf{urlcolor=color} che serve per specificare il colore dei link (sostituite \textit{color} con un colore in lingua inglese);
+    \item \textbf{colorlinks=false} oppure \textbf{colorlinks=true}, che 
+    indica rispettivamente se si vuole che i link vengano riquadrati oppure 
+    colorati;
+    \item \textbf{urlcolor=color} che serve per specificare il colore dei link 
+    (sostituite \textit{color} con un colore in lingua inglese);
 \end{itemize}
 \href{https://en.wikibooks.org/wiki/LaTeX/Hyperlinks}{Per maggiori info sulla personalizzazione}.
