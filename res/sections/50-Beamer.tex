@@ -4,7 +4,7 @@ Si, avete letto bene, non vi stiamo prendendo in giro: con \LaTeX{} è possibile
 creare anche delle splendide presentazioni. ``Come si fa?'' immagino vi starete
 chiedendo, e la risposta è usando un formato di documento
 (\verb!\documentclass!) apposito, che si chiama \texttt{beamer}. In questo
-capitolo andreamo ad analizzare un attimo il funzionamento di questa classe,
+capitolo andramo ad analizzare un attimo il funzionamento di questa classe,
 che include dei comandi specifici per la creazione di slide e l'inserimento di
 effetti di transizione tra di esse\footnote{\LaTeX{} è in grado di supportare
 transizioni anche nei PDF, dando la possibilità di avere un documento leggibile
@@ -19,14 +19,14 @@ contenente un semplice ``Ciao!'':
 \noindent Il risultato che otteniamo non è dei più belli. Un punto molto forte
 di Beamer però è la sua praticamente infinita possibilità di personalizzazione,
 con supporto a temi e a differenti set di colori per ogni tema. Più avanti
-vedremo come selezionarli e creare una tabella degli argomenti automaticamente.
+vedremo come selezionare alcuni già esistenti.
 
 \begin{figure}[t]
  \centering
  \includegraphics[scale=0.3]{screenBeamer}
- \caption{Una presentazione in \LaTeX{} personalizzata: è possibile notare come
-si possa arrivare ad ottenere un alto livello di personalizzazione tramite i
-temi}
+ \caption[Presentazione \LaTeX{} personalizzata]{Una presentazione in \LaTeX{}
+personalizzata: è possibile notare come si possa arrivare ad ottenere un alto
+livello di personalizzazione tramite i temi}
  \label{img:screen_beamer}
 \end{figure}
 
@@ -42,13 +42,14 @@ senza di esso non possiamo fare alcuna presentazione. Esiste la possibilità di
 dare un titolo alla slide che stiamo creando, e questo titolo si va a dare
 grazie al comando \verb!\frametitle{ }!, dove all'interno delle parentesi graffe
 andremo ad inserire il testo che vogliamo. Quindi se vogliamo dare un titolo
-alla nostra slide di saluto potremmo modificare la slide nella maniera seguente:
+alla nostra slide di saluto potremmo modificare la nostra già esistente
+presentazione arricchendola nella maniera seguente:
 
 \lstinputlisting{res/examples/beamerciao2.tex}
 
 \noindent Se state provando a compilare gli esempi presenti nella guida (cosa
 che dovreste!) potrete notare cosa in alto a sinistra è successo: una scritta
-più grande con colori diversi dal testo è apparsa.
+più grande con colori diversi dal resto del testo è apparsa.
 
 \subsection{Creazione slide iniziale}
 Tutte le presentazioni iniziano con una slide iniziale: di solito si mette il
@@ -82,11 +83,11 @@ In generale, tutti i campi qui presenti sono facoltativi: possiamo anche non
 mettere il titolo, ma con ovvie conseguenze. Inoltre questi campi oltre a
 servire per creare la prima pagine del documento possono contribuire a fornire
 \textit{metadata}\footnote{\url{https://it.wikipedia.org/wiki/Metadato}} al PDF
-che verrà poi generato, per far si che ciò avvenga basterà importare il
+che verrà poi generato e per far si che ciò avvenga basterà importare il
 pacchetto \texttt{hyperref} con l'opzione \texttt{pdfusetitle}.
 
 \section{Temi}
-Applicare un tema ad una presentazione è una buona pratica per creare una
+Applicare un tema alle slide è una buona pratica per creare una
 presentazione più piacevole agli ascoltatori, ed è quindi un modo per tenerli
 in qualche modo anche attenti a quello che state dicendo\footnote{A meno che
 quello che state dicendo non sia terribilmente noioso.}.
@@ -122,12 +123,12 @@ piacimento, e potrete notare come non dovrete cambiare il contenuto: infatti in
 \LaTeX{} i temi non influenzano sulla sostanza della presentazione, come
 invece potrebbe accadere in una presentazione PowerPoint per esempio: questo ci
 permette di poter cominciare a scrivere contenuto anche se non abbiamo ancora
-deciso che aspetto dovrà avere la nostra presentazione.
+deciso che aspetto dovrà avere.
 
 \section{Transizioni ed effetti}
 Una cosa utile durante una presentazione potrebbe essere nascondere parte del
 testo all'ascoltatore, in modo da presentare il contenuto di una slide in
-maniera controllara, permettendogli di assorbire tutto quello che viene
+maniera controllata, permettendogli di assorbire tutto quello che viene
 presentato. Questo obiettivo può essere ottenuto in diverse maniere: si
 potrebbero copia-incollare diversi \textit{frame} e aggiungere la parte nuova
 ogni volta, ma non è una soluzione pratica. \LaTeX{} infatti fornisce la
@@ -149,3 +150,57 @@ transizioni, pemettendoci di far visualizzare il testo che ci interessa in
 determinati momenti.
 Questi effetti di transizione si possono usare sia con gli elenchi puntati sia
 con quelli numerati, il comportamento rimane uguale.
+
+\subsection{Effetti}
+Qualcuno potrebbe lamentarsi che qui non sono presenti gli effetti sulle
+transizioni dei lucidi come in PowerPoint. Chi sostiene questo evidentemente
+non conosce a sufficenza \textit{Beamer}, infatti, è possibile inserire tra una
+slide e l'altra la transizione che più ci piace. Gli effetti sono elencati
+nella Tabella~\ref{tab:beamer_effects}.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{Keyword}       & \textbf{Effetto}           \\ \hline
+\verb!\transblindshorizontal! & La slide successiva scorre sopra quella
+precedente con un movimento da sinistra verso destra \\ \hline
+\verb!\transblindsvertical!   & La slide successiva scorre sopra quella
+precedente con un movimento dall'alto verso il basso \\ \hline
+\verb!\transboxin!            & La slide precedente viene ``assorbita'' in un
+quadrato da quella nuova                       \\ \hline
+\verb!\transboxout!           & La slide successiva si espande a forma di
+quadrato su quella precedente                      \\ \hline
+\verb!\transdissolve!         & La slide successiva si dissolve in un effetto
+``pixelato''                                   \\ \hline
+\verb!\transglitter!          & Un misto tra una dissolvenza a pixel e una
+transizione orizzontale                           \\ \hline
+\verb!\transwipe!             & La slide successiva esegue uno ``swipe'' sopra
+quella precedente da sinistra verso destra    \\ \hline
+\verb!\transfade!             & Effetto di fade tra la slide precedente e
+quella successiva                                  \\ \hline
+\end{tabular}
+\caption[Tabella degli effetti Beamer]{Tabella degli effetti per Beamer. Nota:
+solo uno di questi effetti può essere applicato per pagina: l'applicazione di
+due o più effetti nella stessa slide causerà un errore durante la compilazione.}
+\label{tab:beamer_effects}
+\end{table}
+
+È possibile far avanzare automaticamente le slide o gli elenchi puntati tramite
+la \textit{keyword} \verb!\transduration{ }! dove nelle parentesi graffe andremo
+a inserire in secondi la pausa tra l'avanzamento di una slide e l'altra. Questo
+può essere molto comodo e si può combinare con gli effetti di transizioni tra
+slide e tra elenchi puntati che abbiamo avuto modo di vedere prima.
+
+Riprendendo in mano la presentazione su come salutare, andiamo ad aggiungere
+l'avanzamento automatico e un effetto di transizione a nostro piacimento tra
+quelli disponibili:
+
+\lstinputlisting{res/examples/beamereffetti.tex}
+
+\noindent Come possiamo notare alla fine con poche righe di codice (meno di
+50!) siamo riusciti a fare una presentazione con effetti e uno stile suo: dopo
+aver fatto un po' di pratica gli autori di questa guida vi possono assicurare
+che la realizzazione di presentazioni tramite \LaTeX{} diventa più rapida di
+quelle tramite PowerPoint. Il solo scoglio iniziale è quello di assimilare la
+sintassi e di prenderci un po' la mano.
