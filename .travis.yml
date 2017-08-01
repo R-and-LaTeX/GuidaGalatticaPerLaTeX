@@ -19,3 +19,12 @@ script:
 - make
 before_deploy:
 - git fetch --tags
+deploy:
+  provider: releases
+  api_key:
+    secure: V8IGfnqTGWZFvkKYm1OIkCiKbrnkc0clG90Y2SJBO9c5I+zgRY3uC3isWfPX6f551qhXGULDZhut02IsRPPwY6/rRjVsp8USBVWtjQuROpkABI9iHDcu245R/bg88q0PVCrk6oiVUIgnmX5Bw40As4jrcLJQ6QezUxO4S7oOrkPVE28hY9VC0QSy31xFcQTCoHQ81r+PEHLUitUiqUE9hLm9UFUcTG46/4CX9K7HMAGadhxudJLTa/+OhIXyoPnTy3Y+MNoJH/pBTmGsQvgjh+tlBS5QJLOqjQifX2wCIbhrGxRYQaYdcV/6IRC13mkuPB3+zv6ph5n0YV9qWnfHp70qVU7s9Apg6/C/9BuS2l1w140oSylSgILRjHQOeZvjC5Gkqhb8XmlBPvL66K+qL6/+/zFe24iJyRKLYMq3Wnnm+2ZANqO3d/asVka6Brwthi89KmsaJkt9nESowYL5ca9CCK4yz6nCCNJcZacB7MYTwEms2Sey2a+Db4SXhTnyp5bJdLkYWd1tLlycWKhPeXHa1BFxlGrhOc3A/VKTTF1AmGuvbllSgcEMPIb6Eh+yoqyGtQFzZHpNzyovORAABfOGbIMz/1EyPgqkPbrJCM5fgETbOh/7KyC19fyIg5TyoP5dWZZJ3C9ivTm+KdpSQcO8f53T4ZaGzRpVnGKMrhs=
+  file: GuidaGalatticaPerLaTeX.pdf
+  skip_cleanup: true
+  on:
+    repo: R-and-LaTeX/GuidaGalatticaPerLaTeX
+    tags: true
