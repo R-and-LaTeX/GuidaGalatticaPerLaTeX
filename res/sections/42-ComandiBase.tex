@@ -61,12 +61,15 @@ specificata la didascalia per le immagini raggruppate.
 Sì si può anche affiancare testo e immagini. Serve? Bho vedete voi. In ogni 
 caso è possibile utilizzando il \textit{package} \verb!wrapfig!. Questo 
 funziona in modo analogo al solito modo di inserire le immagini, tranne che 
-l'ambiente sarà \verb!\begin{wrapfig}{pos}{dim}...\end{wrapfig}! dove \texttt{
+l'ambiente sarà \\
+\verb!\begin{wrapfig}{pos}{dim}...\end{wrapfig}! dove \texttt{
 pos} può essere \textbf{r} o \textbf{l} e \texttt{dim} serve per specificare 
 le dimensioni di quanto l'immagine deve ``affiancarsi'' al testo. Di seguito 
 un esempio. 
 \lstinputlisting{res/examples/esempiotestoafianco.tex}
-
+Il risultato sarà questo (è stato utilizzato il comando \texttt{lipsum} per mettere del testo riempitivo perchè non avevamo voglia di scrivere del testo sensato):\newpage
+\input{res/examples/esempiotestoafianco.tex}
+\newpage
 
 \section{Note a piè di pagina}
 Spesso capita di dover mettere delle note a piè di pagina, per esempio per 
