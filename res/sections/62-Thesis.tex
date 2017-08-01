@@ -1,0 +1,36 @@
+\section{Creare un proprio stile per la Tesi}
+In questa sezione analizzeremo come creare un proprio stile per una Tesi di
+laurea. È risaputo infatti come una pubblicazione di questo calibro possa
+essere corposa. Come accennato all'inizio della guida, \LaTeX{} è
+particolarmente adatto per documenti di certe dimensioni, e qui vedremo come
+creare uno stile per la tesi di laurea.
+
+\subsection{Copertina}
+Anche se di importante in una tesi è il contenuto, anche l'occhio vuole la sua
+parte. La realizzazione di una copertina non è difficile, e qui vedremo come
+realizzarla in pochi passi, strutturando il progetto come abbiamo visto nel
+capitolo apposito. % TODO mettere un ref per il capitolo 2
+
+Prima di tutto, definiremo dei comandi in maniera tale da rendere la creazione
+della copertina più chiara e anche per separare il contenuto dalla
+presentazione.
+
+\paragraph*{Creazione delle variabili} Apriamo il nostro file
+\texttt{res/config/config.tex} e aggiungiamo le nostre generalità sottoforma di
+variabili:
+
+\lstinputlisting{res/examples/tesi/config.tex}
+
+\paragraph*{Creazione del frontespizio} Ora che abbiamo creato le variabili con
+le nostre informazioni andiamo a creare la parte grafica, ovvero quella che poi
+sarà generata come prima pagina. Per far ciò creiamo un file in
+\texttt{res/sections/Frontespizio.tex} e aggiungiamo il seguente contenuto:
+
+\lstinputlisting{res/examples/tesi/frontespizio.tex}
+
+\noindent Ora abbiamo la copertina per la nostra tesi.
+
+\subsection{Seconda pagina, ringraziamenti}
+
+
+\subsection{Riferimenti bibliografici}
