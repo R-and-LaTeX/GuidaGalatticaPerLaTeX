@@ -30,7 +30,32 @@ sarà generata come prima pagina. Per far ciò creiamo un file in
 
 \noindent Ora abbiamo la copertina per la nostra tesi.
 
-\subsection{Seconda pagina, ringraziamenti}
+\begin{figure}[t]
+ \centering
+ \includegraphics[scale=0.5]{thesis_frontispiece}
+ \caption[Frontespizio tesi]{Risultato della copertina che abbiamo appena
+scritto}
+ \label{img:thesis_frontispiece}
+\end{figure}
 
+
+\subsection{Seconda pagina, ringraziamenti}
+Come tutte le tesi che si rispettino, è importante anche introdurre prima
+quello che viene definito come \textbf{colofone} (ovvero una parte in cui sono
+scritti i dettagli della pubblicazione) e poi una sezione di ringraziamenti.
+Andremo ora a vedere come si fa.
+\paragraph*{Colofone} Prima di tutto, andiamo a creare un altro
+file, nel percorso \texttt{res/sections} e chiamiamolo \texttt{colofone}.
+Ricordiamoci di includere questo file aggiungendolo al file
+\texttt{listOfSections.tex} che, se abbiamo seguito la guida passo passo, si
+trova in \texttt{res/}.
+
+\lstinputlisting{res/examples/tesi/colofone.tex}
+
+\paragraph*{Ringraziamenti} Creiamo un altro file nel solto percorso, e lo
+chiameremo \texttt{ringraziamenti.tex}. Qui inseriremo la dedica che più ci
+piace, completata dalla nostra firma che sarà in basso a destra.
+
+\lstinputlisting{res/examples/tesi/ringraziamenti.tex}
 
 \subsection{Riferimenti bibliografici}
