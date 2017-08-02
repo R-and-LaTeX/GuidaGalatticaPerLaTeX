@@ -122,35 +122,20 @@ Gli stili che possono essere specificati per le citazioni sono:
 Per scegliere lo stile di citazione è necessario specificarlo quando si importa
 il pacchetto \verb!biblatex! in questo modo:
 \begin{lstlisting}
-\usepackage[style=<stile scelto>, backend=biber]{biblatex}
+\usepackage[backend=biber, style=<stile scelto>,hyperref,backref]{biblatex}
 \end{lstlisting}
+(È possibile eliminare \texttt{hyperref} e \texttt{backref}, servono solamente 
+a fare i collegamenti tra la citazione e il riferimento bibliografico).
 
-\chapter{Creare comandi personalizzati}
-Vi ricordate quando parlavamo delle email nella sezione~\ref{subsec:email}? 
-Ecco è arrivato il momento di capire come si definiscono i comandi 
-personalizzati. Questa possibilità è molto utile per esempio quando abbiamo 
-delle cose ripetutive da fare (immaginate per esempio che nella vostra tesi 
-dobbiate scrivere sempre una parola in rosso). I comandi personali vengono 
-definiti nel preambolo del documento e, per definire un nuovo comando, è 
-necessario seguire la seguente sintassi: \\
-\begin{center}
-    \verb!\newcommand{nome_comando}[argomenti]{definizione}!
-\end{center}
-Lascio a voi immagionare cosa sia \verb!\nome_comando! e mi concentro sulle 
-altre due parti:
-\begin{itemize}
-    \item \verb!argomenti! è il numero di ``cose'' che vengono passate al 
-    comando (come quello che si passa tra parentesi graffe nei normali 
-    comandi), il massimo è \textbf{9} (se non viene messo, poichè opzionale, 
-    si assume pari a 0);
-    \item \verb!definizione! è quello che il nostro comando deve fare. Gli 
-    argomenti possono essere sfruttati all'interno del comando tramite 
-    \verb!#n! dove \verb!n! è un numero tra 1 e 9, che indica l'argomento 
-    appunto.
-\end{itemize}
-
-Esempio di un comando senza argomenti:
-\lstinputlisting{res/examples/newcommandsenzaarg.tex}
-
-Esempio di un comando con tre argomenti:
-\lstinputlisting{res/examples/newcommandconarg.tex}
+\subsection{Inserire la bibliografia nel documento}
+Per inserire la bibliografia nel documento è necessario dare i comandi:
+\begin{lstlisting}
+% vedi bibliografia manuale per il significato
+\cleardoublepage 
+% per dare il nome al capitolo con la bibliografia
+\chapter{Bibliografia} 
+% per inserire anche i riferimenti senza citazioni
+\nocite{*}
+% equivale a dare un \printbibliography per ogni categoria
+\bibbycategory
+\end{lstlisting}
