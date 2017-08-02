@@ -1,0 +1,38 @@
+% Ringraziamenti
+\cleardoublepage
+% Creiamo una sezione speciale
+\phantomsection
+% Non vogliamo nessuno stile
+\thispagestyle{empty}
+% Segnamo nella lista delle sezioni dei lettori
+% PDF questa parte col nome ``ringraziamenti''
+\pdfbookmark{Ringraziamenti}{ringraziamenti}
+
+%\bigskip
+
+% Aggiugiamo impostazioni per l'impaginazione
+\begingroup
+\let\clearpage\relax
+\let\cleardoublepage\relax
+\let\cleardoublepage\relax
+
+% Creiamo una sezione che non verrà aggiunta all'indice
+\section*{Ringraziamenti}
+% Ringraziamenti generici, in corsivo
+\noindent \textit{Innanzitutto, vorrei esprimere la
+mia gratitudine al Prof. Pinco Palla, relatore della
+mia tesi, per l'aiuto e il sostegno fornitomi durante la
+stesura del lavoro.}\\
+
+\noindent \textit{Desidero ringraziare con affetto i
+miei genitori per il sostegno, il grande aiuto e per
+essermi stati vicini in ogni momento durante gli anni di
+studio.}\\
+
+% Distianziamoci un poco dai ringraziamenti
+\bigskip
+% Inseriamo la firma composta da posto, data e nome
+\noindent\textit{\myLocation, \myTime}
+\hfill \myName
+
+\endgroup

@@ -1,0 +1,81 @@
+% Cambiamo la numerazione delle pagine
+\frontmatter
+% Definiamo il frontespizio
+\begin{titlepage}
+% Settiamolo in posizione centrale
+\begin{center}
+% Posizioniamo per prima il nome della
+% Università, in grassetto e maiuscolo
+\begin{LARGE}
+\textbf{\myUni}\\
+\end{LARGE}
+
+% Inseriamo 10pt, ovvero 10*0.0138pollici
+\vspace{10pt}
+% Anche qui vogliamo la scritta larga, ma
+% senza il corsivo, definiamo il dipartimento
+\begin{Large}
+\textsc{\myDepartment}\\
+\end{Large}
+% Altro spazio verticale
+\vspace{10pt}
+% Iniziamo un'altra parte che sarà in
+% maiuscoletto in cui definiamo la facoltà
+\begin{large}
+\textsc{\myFaculty}\\
+\end{large}
+% Mettiamo un grande spazio in quando ora
+% inseriamo il logo dell'Università
+\vspace{30pt}
+% Posizioniamo il logo
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[height=6cm]{logo-unipd}
+\end{center}
+\end{figure}
+% Altro grande spazio verticale per inserire
+% il titolo
+\vspace{30pt}
+
+% Titolo bello grande, centrato, in grassetto
+\begin{LARGE}
+\begin{center}
+\textbf{\myTitle}\\
+\end{center}
+\end{LARGE}
+
+% Ci distianziamo dal titolo
+\vspace{10pt}
+% Tipo di laurea
+\begin{large}
+\textsl{\myDegree}\\
+\end{large}
+% Spazio per inserire relatore/laureando
+\vspace{40pt}
+% Inseriamo sulla sinistra il relatore
+\begin{large}
+\begin{flushleft}
+\textit{Relatore}\\
+\vspace{5pt}
+Prof. \myProf
+\end{flushleft}
+% Nella stessa linea
+\vspace{0pt}
+% Inseriamo il laureando
+\begin{flushright}
+\textit{Laureando}\\
+\vspace{5pt}
+\myName
+\end{flushright}
+\end{large}
+% Andiamo a fondo pagina
+\vspace{40pt}
+% Linea orizzontale
+\line(1, 0){338} \\
+% Inserimento anno accademico
+\begin{normalsize}
+\textsc{Anno Accademico \myAA}
+\end{normalsize}
+
+\end{center}
+\end{titlepage}

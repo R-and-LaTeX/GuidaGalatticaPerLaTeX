@@ -1,0 +1,474 @@
+\chapter{Comandi Base}
+
+Di seguito verranno illustrati i comandi base di \LaTeX{}, utili per scrivere
+qualsiasi tipo di documento.
+
+\section{Liste}
+
+Le liste nei documenti possono risultare molto utili quando si tratta di
+elencare oggetti in sequenza, in quanto aumentano la leggibilità e
+scorrevolezza di un testo, non appesantendone la lettura.
+
+La lista è composta fondamentalmente da 3 comandi:
+\begin{itemize}
+ \item \verb!\begin{}! per dichiarare che si sta iniziando una
+lista puntata
+ \item \verb!\item! per indicare un punto della lista
+ \item \verb!\end{}! per segnalare che la lista puntata è terminata.
+\end{itemize}
+
+Esistono due tipologie di liste: elenchi puntati ed elenchi numerati. Per gli
+elenchi \textbf{puntati} si utilizza \texttt{itemize} all'interno delle
+parentesi di \texttt{begin} e \texttt{end}. Se invece si vogliono utilizzare
+gli elenchi \textbf{numerati} la parola da inserire all'interno di
+\texttt{begin} e
+\texttt{end} è \texttt{enumerate}.
+
+\subsection{Esempi}
+
+Per far capire meglio quanto spiegato verranno illustrati un paio di esempi.
+
+\vspace{\abovedisplayskip}
+\begin{minipage}{\linewidth}
+  \noindent Prima di tutto vediamo una lista puntata:
+  \lstinputlisting[firstline=0, lastline=6]{res/examples/liste.tex}
+\end{minipage}
+\vspace{\belowdisplayskip}
+
+\vspace{\abovedisplayskip}
+\begin{minipage}{\linewidth}
+  \noindent Questo è invece il codice per una lista numerata:
+  \lstinputlisting[firstline=8, lastline=13]{res/examples/liste.tex}
+\end{minipage}
+\vspace{\belowdisplayskip}
+
+
+\subsection{Personalizzare gli elenchi puntati}
+
+Gli elenchi sono interessanti, ma a volte potremmo volere qualcosa di più.
+Fortunatamente \LaTeX{} è stato progettato anche con questa possibilità, ed è
+possibile applicare piccoli trucchetti per rendere i propri elenchi puntati
+``speciali''.
+
+\subsubsection{Item personalizzati}
+
+Gli item possono essere personalizzati e al posto dei punti inserire un simbolo
+o un nome personalizzato. Vediamo subito un esempio.
+
+Scrivendo a esempio il seguente codice:
+
+\lstinputlisting[firstline=16, lastline=21]{res/examples/liste.tex}
+
+\vspace{\abovedisplayskip}
+\begin{minipage}{\linewidth}
+  Che produrrà:
+
+  \begin{itemize}
+    \item[Uno] Questo
+    \item[Due] elenco
+    \item[Tre] risulta
+    \item[Quattro] personalizzato
+  \end{itemize}
+
+\end{minipage}
+\vspace{\belowdisplayskip}
+
+
+\noindent Come possiamo notare, non sempre l'aspetto che otteniamo è bello, ma
+questo è un altro discorso.
+
+\subsubsection{Personalizzare gli elenchi puntati}
+
+A volte il classico pallino degli elenchi puntati è proprio brutto, e vorremmo
+sostituirlo con qualcosa di diverso.
+Anche questa operazione è piuttosto semplice, e va eseguita nel preambolo.
+
+\noindent Il codice da inserire è il seguente:
+
+\verb!\renewcommand{\labelitemi}{$\ast$}!
+
+\noindent Questo ci modificherà tutti gli elenchi puntati, mettendo al posto
+del classico pallino un asterisco, ``*''. Ci sono altre opzioni, come per
+esempio \verb!$\bullet$!, \verb!$\cdot$! e \verb!$\diamond$!.
+
+\section{Commenti}
+A volte è utile inserire nel codice (non mi riferisco solamente a \LaTeX{} ma 
+a qualsiasi linguaggi di programmazione) dei commenti che per esempio 
+specificano cosa un comando fa o cosa si deve cambiare, senza che questi però 
+vengano visualizzati nel PDF in \textit{output}. Per fare ciò è sufficiente 
+usare il carattere \texttt{\%}. In questo modo tutto quello che appare dopo 
+tale carattere non verrà visualizzato nel PDF ma rimarrà solamente nel vostro 
+codice.
+
+\section{Formattazione di base}
+
+Non c'è da sorprendersi che su un linguaggio progettato per scrivere documenti
+esista la formattazione di base.
+
+\paragraph*{Grassetto} \textbf{Per scrivere in grassetto il comando da dare è
+il seguente: }\verb!\textbf{testo da scrivere in grassetto}!.
+
+\paragraph*{Corsivo} \textit{Per il corsivo il comando da dare è invece: }
+\verb!\textit{testo in corsivo}!.
+
+\paragraph*{Sottolineato} \underline{Il sottolineato si fa invece con:}
+\verb!\underline{testo sottolineato}!.
+
+\paragraph*{Testo barrato} \sout{Per cancellare il testo: }
+\verb!\sout{Testo da cancellare}!\footnote{Nota che per il testo sbarrato è
+necessario aggiungere un altro pacchetto, scrivendo \texttt{\textbackslash
+usepackage[normalem]\{ulem\}}. La parte relativa ai pacchetti verrà trattata
+meglio più avanti.}.
+
+\section{A spasso nella spaziatura}
+
+È anche utile sapere come andare a capo riga nei momenti giusti e anche come
+inserire spazi appositamente nel testo. A differenza di Word dove viene
+commesso il crimine immondo di inserire invii finché non si raggiunge la
+spaziatura desiderata, in \LaTeX{} è possibile inserire quantità di spazio
+precise, compiendo un lavoro più pulito.
+
+\subsection{A capo riga}
+
+Esistono diversi comandi per eseguire la stessa azione. In questo caso, essi
+sono:
+\begin{itemize}
+ \item \verb!\\!
+ \item \verb!\\*!
+ \item \verb!\newline!
+\end{itemize}
+
+È importante far notare che non è possibile eseguire una cosa del genere in
+\LaTeX{} per andare a capo più volte\footnote{Si, l'abbiamo messo per
+aumentare il numero di pagine di questa guida.}:
+
+\lstinputlisting{res/examples/abominio.tex}
+
+Esiste un comando specifico per fare ciò, che sarà subito spiegato.
+
+\subsection{Inserire pagine}
+
+L'inserimento di una nuova pagina è molto semplice e il comando per creare una
+nuova pagina è \verb!\newpage!.
+
+\subsection{Vuoti cosmici nel testo}
+
+Avere delle parti vuote nel testo può essere utile, si pensi solamente per
+esempio se vogliamo creare una prima pagina diversa, e in generale può servire
+per personalizzare la pagina.
+
+\paragraph*{Spaziatura verticale} Per far ciò esiste una comando magico,
+chiamato \verb!\vspace{ }! che permette di eseguire una spaziatura orizzontale
+del testo. Quantità dello spazio viene misurata solitamente in pixel, quindi ad
+esempio per inserire una spaziatura verticale di 25px sul testo dovrete
+scrivere \verb!\vspace{25px}!. Questo produrrà
+
+\vspace{25px}
+
+\noindent che infine è proprio quello che volevamo (si, sopra abbiamo inserito
+una spaziatura verticale).
+
+\paragraph*{Spaziatura orizzontale} La spaziatura orizzontale si esegue invece
+con il comando \verb!\hspace{ }! e senza sorprese esegue una spaziatura di tipo
+orizzontale.
+
+\subsection{Riempire i vuoti cosmici}
+
+Ripensandoci, alla fine non è proprio così brutto alle volte riempire quel
+freddo spazio bianco che avvinghia i poveri elementi del nostro amato
+documento. Siccome siamo a bordo della nostra nave spaziale, è di certo
+equipaggiata con degli strumenti che ci permettono di fare ciò. Questi
+strumenti in \LaTeX{} si chiamano \texttt{hfill} e \texttt{vfill}, e servono
+rispettivamente per riempire spazi orizzontali e verticali. Questa descrizione
+sembra un poco povera ed è normale mettere la loro utilità in discussione, ma
+vedremo che questi due strumenti si riveleranno utili quando andremo a
+manipolare immagini ed ad inserirle.
+
+\newpage
+\begin{landscape}
+
+\subsection{Orientare le pagine}
+
+No, non stiamo parlando di come far trovare la posizione alle pagine che si
+sono perse, ma vi spiegheremo come sia possibile avere pagine orientate in
+maniera orizzontale in un documento con pagine verticali. Vedremo poi come
+invece applicare un'orientazione orizzontale ad un intero documento.
+
+\subsubsection{Una pagina orizzontale}
+
+Per avere solo una pagina orizzontale i passi da fare non sono molti, e
+consistono a dire al signor \LaTeX{} che vogliamo che la prossima pagina sia
+ruotata di 90 gradi.
+
+\vspace{\abovedisplayskip}
+\begin{minipage}{\linewidth}
+  \noindent Vediamo un esempio completo:
+  \lstinputlisting{res/examples/paginaRuotata.tex}
+\end{minipage}
+\vspace{\belowdisplayskip}
+
+\subsection{Ma io voglio tutto il documento orizzontale!}
+
+E va bene, non c'è bisogno di scaldarsi tanto! Ora vediamo come creare un
+documento orientato orizzontalmente. Per farlo ci sono due modi:
+\begin{enumerate}
+ \item Impostando la rotazione direttamente in \texttt{documentclass}
+ \item Impostando la rotazione tramite il pacchetto \texttt{geometry}
+\end{enumerate}
+
+
+\vspace{\abovedisplayskip}
+\begin{minipage}{\linewidth}
+  \paragraph*{Impostando la rotazione da geometry}
+
+  La rotazione del documento da \texttt{geometry} è impostabile in questa
+  maniera:
+  \lstinputlisting{res/examples/documentoRuotato.tex}
+
+
+\end{minipage}
+\vspace{\belowdisplayskip}
+
+\end{landscape}
+\newpage
+\section{Tabelle}
+
+Siamo arrivati ad un argomento spinoso: le tabelle. Come potete immaginare, la
+rappresentazione di una tabella in un documento di testo non dev'essere nulla
+di semplice. Immaginate con \LaTeX{}, dove c'è la possibilità di specificare le
+linee da visualizzare e di poter dire come specificare la formattazione del
+testo all'interno di ogni cella: insomma, un vero disastro.
+A spezzare una lancia a favore delle tabelle in \LaTeX{} c'è la loro estrema
+flessibilità e personalizzazione: vedremo com'è possibile creare tabelle molto
+avanzate, senza rischiare che si disintegrino alla prima modifica.
+
+\subsection{Tabelle semplici}
+
+Iniziamo con una tabella semplice. Realizzare una tabella senza troppe pretese
+è semplice dopo che si è capito come funziona.
+
+Prima di tutto, per dichiarare che si sta creando una tabella bisogna scrivere
+\verb!\begin{table}[ ]!, dove all'interno delle parentesi quadre è possibile
+specificare la posizione di dove vogliamo la tabella. Se la vogliamo nella
+posizione di dove la stiamo dichiarando scriveremo \verb![H]!\footnote{Nota
+che è necessario importare il pacchetto \texttt{float}. Se non volete farlo,
+potete scrivere \texttt{h!} che vi darà un risultato simile}.
+
+Dopodiché bisogna dire che vogliamo una tabulazione, e possiamo specificare il
+numero di colonne che vogliamo avere. Per fare ciò scriveremo
+\verb!\begin{tabular}{}!, dove nel secondo paio di \verb!{ }! specificheremo il
+numero di colonne. Vedremo più avanti nel dettaglio questa parte, per il
+momento fidatevi.
+
+\vspace{\abovedisplayskip}
+\begin{minipage}{\linewidth}
+  \subsubsection{Esempietto}
+
+  Vediamo come creare una semplice tabella:
+  \lstinputlisting{res/examples/tabellaSemplice.tex}
+
+
+\end{minipage}
+\vspace{\belowdisplayskip}
+
+
+Che risulterà in questa tabella:
+\begin{table}[H]
+\centering
+\begin{tabular}{llll}
+Articoli      & Identificativo & Quantità & Costo \\
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+Raccoglitori  & Ufficio        & 30       & 12 \euro{}
+\end{tabular}
+\caption{Una tabella d'esempio}
+\label{tabella:esempio}
+\end{table}
+
+A questo punto ci piacerebbe però avere dei bordi sulla tabella. Niente di più
+facile! Per aggiungere i bordi alla tabella dobbiamo usare \verb!\hline! per le
+linee orizzontali, mentre per avere le linee verticali (ovvero tra colonne)
+dobbiamo modificare il \verb!\begin{tabular}{llll}! nella seguente
+maniera\footnote{Nota che in \LaTeX{} l'utilizzo di linee verticali è a
+quanto pare sconsigliato in quanto peggiora la leggibilità della tabella.}:
+
+\vspace{\abovedisplayskip}
+\begin{minipage}{\linewidth}
+  \subsubsection{Esempietto}
+
+  Vediamo come creare una semplice tabella:
+  \lstinputlisting{res/examples/tabellaConBordi.tex}
+
+
+\end{minipage}
+\vspace{\belowdisplayskip}
+
+Che ci darà il seguente risultato:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+Articoli      & Identificativo & Quantità & Costo \\
+\hline
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+\hline
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+\hline
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+\hline
+Raccoglitori  & Ufficio        & 30       & 12 \euro{}\\
+\hline
+\end{tabular}
+\caption{Una tabella d'esempio con i bordi}
+\label{tabella:esempio2}
+\end{table}
+
+Una nota importante da considerare è la possibilità di personalizzare dove
+posizionare i bordi o meno: per la vostra curiosità, provate a rimuovere uno o
+due \verb!\hline! o qualche sbarretta sull'inizializzazione della tabella, e
+vedrete come la tabella si ``evolve''.
+
+Online esistono tool che permettono la creazione di semplici tabelle in
+maniera visuale. Sono molto utili e permettono di risparmiare un sacco di
+tempo, per cui noi li consigliamo. Un buon sito per la generazione di tabelle
+(che permette cose tra cui l'inserimento di bordi in maniera visuale) è
+disponibile all'indirizzo \url{http://www.tablesgenerator.com/}.
+
+\subsection{Tabelle su più pagine}
+
+A volte capita di avere una grande mole di dati da mettere in una tabella, e
+che questi dati non ci stiano su una pagina. Se avete provato a fare una
+tabella più grande di una pagina avrete sicuramente notato di come questa
+continui ad andare anche fuori dal termine della pagina stessa, sbattendosene
+di qualsiasi bordo presente. Siccome questa \textit{feature} non piaceva a
+tutti, qualche programmatore brufoloso e annoiato nel seminterrato di sua madre
+si è inventato una bella sera\footnote{L'habitat preferito per un
+programmatore.} di implementare le tabelle su più pagine e di pubblicare ciò su
+un pacchetto a parte, \texttt{longtable}.
+Per usare \texttt{longtable} quindi bisogna includere l'omonimo pacchetto nel
+preambolo del documento, con il solito comando a cui siamo abituati, ovvero
+\verb!\usepackage{longtable}!.
+La creazione di una tabella sarà simile a quella di prima, con qualche piccola
+differenza che ora vedremo in questo esempio:
+\lstinputlisting{res/examples/tabellaLunga.tex}
+
+Questa risulta in:
+
+\begin{center}
+\begin{longtable}{llll}
+Articoli      & Identificativo & Quantità & Costo \\
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+Matite        & Cancelleria    & 100      & 20 \euro{}\\
+Penne biro    & Cancelleria    & 120      & 15 \euro{}\\
+Gomme         & Cancelleria    & 40       & 60 \euro{}\\
+Raccoglitori  & Ufficio        & 30       & 12 \euro{}\\
+
+\caption{Una tabella multipagina d'esempio}
+\label{tabella:esempio_tabella_lunga}
+\end{longtable}
+\end{center}
+
+Le tabelle su più pagine possono diventare estremamente complicate, e quello
+che abbiamo presentato è solamente un accenno, giusto per farvi vedere come
+funzionano e che esistono.
+Alleghiamo qui un esempio di come una tabella può evolvere in qualcosa di
+estremamente complicato ma molto personalizzato. Questa è da considerarsi
+stregoneria, e per i propositi del nostro corso non verrà spiegata.
+
+\lstinputlisting{res/examples/tabellaStregoneria.tex}
+
+\subsection{Altre informazioni sulle tabelle}
+
+Se pensavate fosse tutto finito qui, vi state sbagliando di grosso. Il signor
+\LaTeX{} permette di personalizzare ulteriormente le nostre tabelle, e qui
+verranno spiegati alcuni piccoli trucchi che pensiamo possano essere utili a
+voi lettori.
+
+\subsubsection{Posizionamento del testo nelle celle}
+
+A volte potrebbe essere utile avere la possibilità di centrare o posizionare il
+testo di una tabella in maniera particolare. Questo è ovviamente possibile, e
+per farlo bisogna modificare il modo in cui dichiariamo inizialmente la
+tabella. Quando mettiamo la dicitura \texttt{l} in
+\verb!\begin{tabular}{llll}! stiamo dicendo infatti che vogliamo che il testo
+di tutte le celle nella tabella sia orientato a sinistra. Esistono diverse
+opzioni per questo comando, che sono \texttt{l}, \texttt{c} e \texttt{r}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+l & colonne aggiustate a sinistra \\ \hline
+c & colonne centrate              \\ \hline
+r & colonne aggiustate a destra   \\ \hline
+\end{tabular}
+\caption{Elenco delle opzioni che si possono mettere nella voce
+\texttt{tabular}.}
+\label{tab:elenco_opzioni_tabella}
+\end{table}
+
+\subsubsection{Impostare manualmente la grandezza delle celle}
+
+Se non viene specificato nessuna impostazione, in \LaTeX{} la larghezza delle
+celle viene impostata automaticamente in maniera tale da ottenere il miglior
+effetto visibile per il lettore. Sfortunatamente, questo non sempre capita, e a
+volte impostare manualmente la larghezza delle colonne può risultare utile.
+L'impostazione della larghezza avviene sempre nella linea
+\verb!\begin{tabular}{ }!, e al posto di \texttt{l}, \texttt{c} e \texttt{r}
+andremo a mettere un altro parametro, che si chiama \texttt{p}.
+
+\paragraph*{Come funziona la keyword \texttt{p}} La \textit{keyword} \texttt{p}
+ha bisogno di un parametro per funzionare, e questo parametro è la larghezza in
+cm che si vuole della colonna. Vediamo subito un esempio per chiarirci le idee:
+
+\vspace{\abovedisplayskip}
+\begin{minipage}{\linewidth}
+  \lstinputlisting{res/examples/tabellaSpoporzionata.tex}
+\end{minipage}
+\vspace{\belowdisplayskip}
+
+\noindent Questo codice ci darà il seguente risultato:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{2cm}|p{10cm}|}
+\hline
+È questa colonna sproporzionata? & Si \\ \hline
+\end{tabular}
+\caption{Una tabella con la larghezza delle colonne personalizzata}
+\label{tab:es_spoporzionata}
+\end{table}
+
+\noindent Come possiamo notare, bisogna prestare attenzione quando si impostano
+manualmente le dimensioni delle varie colonne, perché l'aspetto potrebbe
+risentirne (come in questo caso). È buona pratica quindi, se vogliamo impostare
+la dimensione delle colonne manualmente, eseguire delle prove visuali in modo
+da vedere se il risultato ottenuto ci soddisfa.
