@@ -1,57 +1,57 @@
 \chapter{Bibliografia}
-Quando si scrive una tesi è importante citare le fonti da cui si sono prese le 
-informazioni (se non altro per far vedere che non si stanno dicendo 
-stupidaggini). Latex prevede due metodi principali per scrivere la 
-bibliografia: uno manuale e uno automatico. Il primo è di gran lunga più 
-semplice, il secondo è più personalizzabile e offre alcune comodità in più 
-rispetto al primo\footnote{per la bibliografia si faccia riferimento al 
-capitolo \texttt{7.2} del libro \textit{L'Arte di scrivere con \LaTeX{}} di 
+Quando si scrive una tesi è importante citare le fonti da cui si sono prese le
+informazioni (se non altro per far vedere che non si stanno dicendo
+stupidaggini). Latex prevede due metodi principali per scrivere la
+bibliografia: uno manuale e uno automatico. Il primo è di gran lunga più
+semplice, il secondo è più personalizzabile e offre alcune comodità in più
+rispetto al primo\footnote{per la bibliografia si faccia riferimento al
+capitolo \texttt{7.2} del libro \textit{L'Arte di scrivere con \LaTeX{}} di
 Lorenzo Pantieri, dove è spiegato molto bene cosa fare in caso di dubbi}.
 
 \section{Bibliografia manuale} \label{sec:bibman}
-In questa prima versione della bibliografia i riferimenti bibliografici devono 
+In questa prima versione della bibliografia i riferimenti bibliografici devono
 essere specificati all'interno dell'ambiente \\
-\verb!\begin{thebibliography}{n}...\end{thebibliography}! dove la \texttt{n} 
-nelle seconde parentesi graffe deve essere sostituita o dal primo numero 
-composto solo da nove che è maggiore del numero di riferimenti (per capirci se 
-abbiamo meno di 10 riferimenti si mette 9, se ne abbiamo da 10 fino a 99 si 
-mette 99 e così via), nel caso in cui si utilizzino le etichette automatiche, 
-o dall'etichette più lunga, nel caso di etichette personalizzate. La specifica 
-dei riferimenti funziona in modo molto simile alle liste: infatti, per ogni 
-riferimento, si specifica un 
-\verb!\bibitem[etichetta_personalizzate]{identificativo}! e di seguito devono 
-essere specificate a mano tutte le informazioni necessarie. 
-\verb!etichetta_personalizzata! è opzionale e serve se, appunto, si vogliono 
-mettere delle etichette che verranno mostrate al posto del testo, 
-\verb!identificativo! solitamente segue la sintassi \verb!autore:titolo! (è 
-una \textit{best practice}, come nel caso di \verb!\label!). Spesso se il 
-titolo del libro è molto lungo, però, viene abbreviato. 
+\verb!\begin{thebibliography}{n}...\end{thebibliography}! dove la \texttt{n}
+nelle seconde parentesi graffe deve essere sostituita o dal primo numero
+composto solo da nove che è maggiore del numero di riferimenti (per capirci se
+abbiamo meno di 10 riferimenti si mette 9, se ne abbiamo da 10 fino a 99 si
+mette 99 e così via), nel caso in cui si utilizzino le etichette automatiche,
+o dall'etichette più lunga, nel caso di etichette personalizzate. La specifica
+dei riferimenti funziona in modo molto simile alle liste: infatti, per ogni
+riferimento, si specifica un
+\verb!\bibitem[etichetta_personalizzate]{identificativo}! e di seguito devono
+essere specificate a mano tutte le informazioni necessarie.
+\verb!etichetta_personalizzata! è opzionale e serve se, appunto, si vogliono
+mettere delle etichette che verranno mostrate al posto del testo,
+\verb!identificativo! solitamente segue la sintassi \verb!autore:titolo! (è
+una \textit{best practice}, come nel caso di \verb!\label!). Spesso se il
+titolo del libro è molto lungo, però, viene abbreviato.
 
 \subsection{Inserire la bibliografia nel documento}
-Una volta fatta la bibliografia, saremmo molto felici se questa apparisse 
-nel nostro documento e venisse anche mostrata nell'eventuale indice. Per fare 
-ciò, \emph{immediatamente prima} di inserire la bibliografia è necessario dare 
+Una volta fatta la bibliografia, saremmo molto felici se questa apparisse
+nel nostro documento e venisse anche mostrata nell'eventuale indice. Per fare
+ciò, \emph{immediatamente prima} di inserire la bibliografia è necessario dare
 i comandi:
 \lstinputlisting{res/examples/bibliografiabookreport.tex}
 Nel caso di \verb!book! o \verb!report!, mentre è necessario il comando:
 \lstinputlisting{res/examples/bibliografiaarticle.tex}
-Nel caso di un \verb!article!. Dove\footnote{Parte rubata appunto da 
+Nel caso di un \verb!article!. Dove\footnote{Parte rubata appunto da
 \textit{L'Arte di scrivere con \LaTeX{}}}:
 \begin{itemize}
-    \item \verb!\cleardoublepage! fa cominciare la bibliografia in una pagina 
-    nuova dispari, assegnando alla voce nell’indice il numero di pagina 
+    \item \verb!\cleardoublepage! fa cominciare la bibliografia in una pagina
+    nuova dispari, assegnando alla voce nell’indice il numero di pagina
     corretto;
-    \item \verb!\clearpage! va dato per assicurare la corretta assegnazione 
-    del numero di pagina alla voce nell’indice solo se a fine composizione il 
-    corpo del documento terminasse esattamente a fine pagina e la bibliografia 
-    cominciasse all’inizio di una pagina nuova (in tal caso si decommenti la 
+    \item \verb!\clearpage! va dato per assicurare la corretta assegnazione
+    del numero di pagina alla voce nell’indice solo se a fine composizione il
+    corpo del documento terminasse esattamente a fine pagina e la bibliografia
+    cominciasse all’inizio di una pagina nuova (in tal caso si decommenti la
     riga corrispondente);
-    \item \verb!\phantomsection! va dato solo se è caricato anche il 
-    \textit{package} \verb!hyperref! (in tal caso si decommenti la riga 
+    \item \verb!\phantomsection! va dato solo se è caricato anche il
+    \textit{package} \verb!hyperref! (in tal caso si decommenti la riga
     corrispondente);
-    \item \verb!chapter! e \verb!section! indicano il livello della sezione 
+    \item \verb!chapter! e \verb!section! indicano il livello della sezione
     bibliografica (un capitolo e un paragrafo, rispettivamente);
-    \item \verb!\bibname! e \verb!\refname! producono nell’indice generale del 
+    \item \verb!\bibname! e \verb!\refname! producono nell’indice generale del
     documento le voci \emph{Bibliografia} e \emph{Riferimenti bibliografici}
     rispettivamente.
 \end{itemize}
@@ -60,17 +60,17 @@ Esempio:
 
 
 \section{Bibliografia automatica}
-La bibliografia manuale, essendo molto semplica, ha però dei limiti come già 
+La bibliografia manuale, essendo molto semplica, ha però dei limiti come già
 accennato. Questi sono:
 \begin{itemize}
     \item Non viene ordinata in ordine alfabetico;
     \item Tale bibliografia deve essere riscritta per ogni documento;
-    \item Se si vuole cambiarne lo stile, bisogna mettere mano ad ogni singola 
+    \item Se si vuole cambiarne lo stile, bisogna mettere mano ad ogni singola
     voce!
 \end{itemize}
-La versione automatica, invece, permette di creare un \textit{database} delle 
-opere, riutilizzabile in più documenti. Per andarla a creare si utilizzano i 
-\textit{packages} \texttt{biblatex} e \texttt{csquotes}, inserendo nel 
+La versione automatica, invece, permette di creare un \textit{database} delle
+opere, riutilizzabile in più documenti. Per andarla a creare si utilizzano i
+\textit{packages} \texttt{biblatex} e \texttt{csquotes}, inserendo nel
 preambolo:
 \begin{lstlisting}
 \usepackage[autostyle,italian=guillemets]{csquotes}
@@ -82,19 +82,19 @@ Per fare il \textit{database} con tutte le opere che cci servono è necessario
 creare un file in \texttt{res/bibliography.bib}, e aggiungiamo le nostre fonti
 con la seguente sintassi:
 \lstinputlisting{res/examples/tesi/bibliografia.bib}
-Come possiamo notare il carattere \verb!@! ci permette di indicare il tipo di 
-riferimento (articolo, libro, manuale, ...). Questo è seguito da un 
-identificativo univoco (vedi la parte dedicata alla sezione~\ref{sec:bibman}) 
+Come possiamo notare il carattere \verb!@! ci permette di indicare il tipo di
+riferimento (articolo, libro, manuale, ...). Questo è seguito da un
+identificativo univoco (vedi la parte dedicata alla sezione~\ref{sec:bibman})
 e che ogni campo deve seguire la sintassi:
 \begin{lstlisting}
 <nome campo> = {<contenuto del campo>},
 \end{lstlisting}
 (ricordarsi la virgola finale, anche all'ultimo campo)\\
-I campi possono essere \emph{obbligatori} o \emph{opzionali} a seconda del 
+I campi possono essere \emph{obbligatori} o \emph{opzionali} a seconda del
 tipo di riferimento (Quelli nell'esempio sono quasi tutti \emph{obbligatori}).
-\par Le tipologie di riferimenti nell'esempio sono solamente un piccolo 
+\par Le tipologie di riferimenti nell'esempio sono solamente un piccolo
 sottoinsieme, come i campi che possono essere specificati per ogniuna
-\footnote{per un elenco completo consultare al capitolo \texttt{7.2} del libro 
+\footnote{per un elenco completo consultare al capitolo \texttt{7.2} del libro
 \textit{L'Arte di scrivere con \LaTeX{}}}.
 \par Quando si specifica l'autore di un'opera è possibile che:
 \begin{enumerate}
@@ -105,7 +105,7 @@ Nel primo caso la sintassi da adottare è:
 \begin{lstlisting}
 author = {CognomeAutore1, NomeAutore1 and CognomeAutore2, NomeAutore2},
 \end{lstlisting}
-Cioè specificando un \texttt{and} tra gli autori. Il secondo caso, invece, 
+Cioè specificando un \texttt{and} tra gli autori. Il secondo caso, invece,
 richiede questa sintassi:
 \begin{lstlisting}
 author = {Cognome1 Cognome2, Nome1 Nome2},
@@ -124,16 +124,16 @@ il pacchetto \verb!biblatex! in questo modo:
 \begin{lstlisting}
 \usepackage[backend=biber, style=<stile scelto>,hyperref,backref]{biblatex}
 \end{lstlisting}
-(È possibile eliminare \texttt{hyperref} e \texttt{backref}, servono solamente 
+(È possibile eliminare \texttt{hyperref} e \texttt{backref}, servono solamente
 a fare i collegamenti tra la citazione e il riferimento bibliografico).
 
 \subsection{Inserire la bibliografia nel documento}
 Per inserire la bibliografia nel documento è necessario dare i comandi:
 \begin{lstlisting}
 % vedi bibliografia manuale per il significato
-\cleardoublepage 
+\cleardoublepage
 % per dare il nome al capitolo con la bibliografia
-\chapter{Bibliografia} 
+\chapter{Bibliografia}
 % per inserire anche i riferimenti senza citazioni
 \nocite{*}
 % equivale a dare un \printbibliography per ogni categoria
