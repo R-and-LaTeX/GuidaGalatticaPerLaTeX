@@ -1,0 +1,46 @@
+% Usiamo la classe per le presentazioni
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc} % Per gli accenti
+
+% Inseriamo il titolo
+\title{Ciao!}
+% Inserimento del sottotitolo
+\subtitle{Come salutare con ancora più stile}
+% La data può essere espressa come ci piace
+\date{31/07/2017}
+% Autore della presentazione
+\author{Davide Polonio}
+% Istituzione per cui presentiamo, facoltativa
+\institute{Università degli studi di Padova}
+
+% Carichiamo il tema Berlin
+\usetheme{Berlin}
+% Settiamo il set di colori beaver
+\usecolortheme{beaver}
+
+\begin{document}
+ \begin{frame}
+  % Stampa a titolo automaticamente formattato
+  \maketitle
+ \end{frame}
+
+ % Iniziamo la sezione su come salutare
+ \section{Salutare}
+ \begin{frame} % Nuova slide
+  \frametitle{Come salutare} % Titolo slide
+
+  \transdissolve % Effetto pixel
+  \transduration{2} % Avanzamento ogni 2 secondi
+
+  Step principali:
+  \begin{enumerate} % Elenco puntato
+   % Prima di ogni punto mettiamo quando lo
+   % vogliamo rendere disponibile
+   \item<1-> Alzare la mano
+   \item<2-> Rivolgerla all'interessato
+   \item<3-> Muoverla a destra e a sinistra
+   \item<4-> Fatto!
+  \end{enumerate}
+ \end{frame}
+\end{document}

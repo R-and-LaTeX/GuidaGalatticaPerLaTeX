@@ -1,0 +1,86 @@
+\chapter{Comandi avanzati}
+
+\section{Bibliografia}
+Quando si scrive una tesi è importante citare le fonti da cui si sono prese le 
+informazioni (se non altro per far vedere che non si stanno dicendo 
+stupidaggini). Latex prevede due metodi principali per scrivere la 
+bibliografia: uno manuale e uno automatico. Noi vedremo solamente il primo, 
+perchè di gran lunga più semplice\footnote{per la bibliografia automatica si 
+rimanda al capitolo \texttt{7.2} del libro \textit{L'Arte di scrivere con 
+\LaTeX{}} di Lorenzo Pantieri, dove è spiegato molto bene}.
+\par I riferimenti bibliografici devono essere specificati all'interno 
+dell'ambiente \\\verb!\begin{thebibliography}{n}...\end{thebibliography}! dove 
+la \texttt{n} nelle seconde parentesi graffe deve essere sostituita o dal 
+primo numero composto solo da nove che è maggiore del numero di riferimenti (
+per capirci se abbiamo meno di 10 riferimenti si mette 9, se ne abbiamo da 10 
+fino a 99 si mette 99 e così via), nel caso in cui si utilizzino le etichette 
+automatiche, o dall'etichette più lunga, nel caso di etichette personalizzate. 
+La specifica dei riferimenti funziona in modo molto simile alle liste: 
+infatti, per ogni riferimento, si specifica un 
+\verb!\bibitem[etichetta_personalizzate]{identificativo}! e di seguito devono 
+essere specificate a mano tutte le informazioni necessarie. 
+\verb!etichetta_personalizzata! è opzionale e serve se, appunto, si vogliono 
+mettere delle etichette che verranno mostrate al posto del testo, 
+\verb!identificativo! solitamente segue la sintassi \verb!autore:titolo! (è 
+una \textit{best practice}, come nel caso di \verb!\label!). Spesso se il 
+titolo del libro è molto lungo, però, viene abbreviato. 
+\par Una volta fatta la bibliografia, saremmo molto felici se questa apparisse 
+nel nostro documento e venisse anche mostrata nell'eventuale indice. Per fare 
+ciò, \emph{immediatamente prima} di inserire la bibliografia è necessario dare 
+i comandi:
+\lstinputlisting{res/examples/bibliografiabookreport.tex}
+Nel caso di \verb!book! o \verb!report!, mentre è necessario il comando:
+\lstinputlisting{res/examples/bibliografiaarticle.tex}
+Nel caso di un \verb!article!. Dove\footnote{Parte rubata appunto da 
+\textit{L'Arte di scrivere con \LaTeX{}}}:
+\begin{itemize}
+    \item \verb!\cleardoublepage! fa cominciare la bibliografia in una pagina 
+    nuova dispari, assegnando alla voce nell’indice il numero di pagina 
+    corretto;
+    \item \verb!\clearpage! va dato per assicurare la corretta assegnazione 
+    del numero di pagina alla voce nell’indice solo se a fine composizione il 
+    corpo del documento terminasse esattamente a fine pagina e la bibliografia 
+    cominciasse all’inizio di una pagina nuova (in tal caso si decommenti la 
+    riga corrispondente);
+    \item \verb!\phantomsection! va dato solo se è caricato anche il \textit{
+    package} \verb!hyperref! (in tal caso si decommenti la riga 
+    corrispondente);
+    \item \verb!chapter! e \verb!section! indicano il livello della sezione 
+    bibliografica (un capitolo e un paragrafo, rispettivamente);
+    \item \verb!\bibname! e \verb!\refname! producono nell’indice generale del 
+    documento le voci \emph{Bibliografia} e \emph{Riferimenti bibliografici}
+    rispettivamente.
+\end{itemize}
+Esempio:
+\lstinputlisting{res/examples/esempiobibliografia.tex}
+
+
+\section{Creare comandi personalizzati}
+Vi ricordate quando parlavamo delle email nella sezione~\ref{subsec:email}? 
+Ecco è arrivato il momento di capire come si definiscono i comandi 
+personalizzati. Questa possibilità è molto utile per esempio quando abbiamo 
+delle cose ripetutive da fare (immaginate per esempio che nella vostra tesi 
+dobbiate scrivere sempre una parola in rosso). I comandi personali vengono 
+definiti nel preambolo del documento e, per definire un nuovo comando, è 
+necessario seguire la seguente sintassi: \\
+\begin{center}
+    \verb!\newcommand{nome_comando}[argomenti]{definizione}!
+\end{center}
+Lascio a voi immagionare cosa sia \verb!\nome_comando! e mi concentro sulle 
+altre due parti:
+\begin{itemize}
+    \item \verb!argomenti! è il numero di ``cose'' che vengono passate al 
+    comando (come quello che si passa tra parentesi graffe nei normali 
+    comandi), il massimo è \textbf{9} (se non viene messo, poichè opzionale, 
+    si assume pari a 0);
+    \item \verb!definizione! è quello che il nostro comando deve fare. Gli 
+    argomenti possono essere sfruttati all'interno del comando tramite 
+    \verb!#n! dove \verb!n! è un numero tra 1 e 9, che indica l'argomento 
+    appunto.
+\end{itemize}
+
+Esempio di un comando senza argomenti:
+\lstinputlisting{res/examples/newcommandsenzaarg.tex}
+
+Esempio di un comando con tre argomenti:
+\lstinputlisting{res/examples/newcommandconarg.tex}
