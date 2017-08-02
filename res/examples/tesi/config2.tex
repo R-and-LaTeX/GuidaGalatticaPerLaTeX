@@ -1,0 +1,25 @@
+% Impostazioni di biblatex
+\bibliography{res/bibliography} % database di biblatex
+
+% Impostazioni varie di configurazione
+\defbibheading{bibliography}
+{
+    \cleardoublepage
+    \phantomsection
+    \addcontentsline{toc}{chapter}{\bibname}
+    \chapter*{\bibname\markboth{\bibname}{\bibname}}
+}
+
+\setlength\bibitemsep{1.5\itemsep} % Spazio tra entry
+
+% Categorie di bibliografie che andremo a mettere
+\DeclareBibliographyCategory{opere}
+\DeclareBibliographyCategory{web}
+
+% Riportiamo la lista assegnando ad ogni link una categoria
+\addtocategory{web}{site:esempio1}
+\addtocategory{web}{site:esempio2}
+
+% Diamo un nome alla sezione della categoria
+\defbibheading{web}{\section*{Siti Web consultati}}
+
