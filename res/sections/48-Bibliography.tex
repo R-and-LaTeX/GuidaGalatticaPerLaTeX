@@ -79,8 +79,9 @@ preambolo:
 
 \subsection{Database delle opere}
 Per fare il \textit{database} con tutte le opere che ci servono è necessario
-creare un file in \texttt{res/bibliography.bib}, e aggiungiamo le nostre fonti
-con la seguente sintassi:
+creare un file \texttt{.bib}, che deve essere specificato tramite il comando
+\verb!\addbibresource{path_to_file.bib}! nel documento, e aggiungiamo le nostre
+fonti con la seguente sintassi:
 \lstinputlisting{res/examples/tesi/bibliografia.bib}
 Come possiamo notare il carattere \verb!@! ci permette di indicare il tipo di
 riferimento (articolo, libro, manuale, ...). Questo è seguito da un
@@ -132,10 +133,8 @@ Per inserire la bibliografia nel documento è necessario dare i comandi:
 \begin{lstlisting}
 % vedi bibliografia manuale per il significato
 \cleardoublepage
-% per dare il nome al capitolo con la bibliografia
-\chapter{Bibliografia}
 % per inserire anche i riferimenti senza citazioni
 \nocite{*}
-% equivale a dare un \printbibliography per ogni categoria
-\bibbycategory
+% per stampare effettivamente la bibliografia
+\printbibliography
 \end{lstlisting}
