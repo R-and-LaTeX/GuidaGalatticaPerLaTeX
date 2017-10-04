@@ -22,7 +22,7 @@ Come avete magari già notato nell'esempio, il documento si divide in due parti:
     \item la prima, dove ci sono cose tipo \verb!\documentclass{...}! e 
     \verb!\usepackage{...}! viene detta \textbf{preambolo}. In questa sezione 
     vengono definiti i pacchetti che il documento utilizza (vedremo in 
-    seguito) e il tipo di documento (appena dopo, un po' di pazienza!);
+    seguito) e il tipo di documento (subito dopo, un po' di pazienza!);
     \item la seconda, invece, che inizia e finisce rispettivamente con 
     \verb!\begin{document}! e \verb!\end{document}! viene detta \textbf{corpo} 
     e contiene tutto il testo del documento.
@@ -77,10 +77,10 @@ per ``grandezza'' logica):
 \end{description}
 È spesso consigliato di non sezionare il documento troppo finemente. Le 
 divisioni fino a \texttt{subsection} sono aggiunte automaticamente all'indice e
-vengono automaticamente numerate. Se per qualche motivo si vuole che una di
+vengono automaticamente numerate. Se per qualche motivo si volesse che una di
 queste divisioni non appaia nell'indice è necessario postporre al nome del
-comando un asterisco (per esempio \emph{\textbackslash{}chapter*{Nome
-capitolo}}). Infine per mostrare l'indice delle sezioni è sufficiente dare il
+comando un asterisco (per esempio \texttt{\textbackslash chapter*}\emph{Nome
+capitolo}). Infine per mostrare l'indice delle sezioni è sufficiente dare il
 comando \texttt{\textbackslash tableofcontents}.
 
 \section{Package}
@@ -94,7 +94,7 @@ da altri che ci aiutano a scrivere in maniera più semplice. Vediamo un esempio.
 \lstinputlisting{res/examples/accentinoutf8.tex}
 \lstinputlisting{res/examples/accentiutf8.tex}
 Se proviamo a compilare il primo dei due esempi gli accenti non appariranno, 
-mentre nel secondo si, poichè abbiamo utilizzato il pacchetto 
+mentre nel secondo si, poiché abbiamo utilizzato il pacchetto 
 \verb!\usepackage[utf8]{inputenc}!. Questi \textit{packages} ci permettono di 
 fare cose ancora più magiche. Provare il seguente documento per credere!
 \lstinputlisting{res/examples/cone.tex}
