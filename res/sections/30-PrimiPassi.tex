@@ -56,6 +56,33 @@ tipologia si vuole. Le principali tipologie sono:
 \subsubsection{Esempio di documento beamer}
 \lstinputlisting{res/examples/esempiobeamer.tex}
 
+\section{Sezionare un documento}
+Per suddividere un documento è possibile utilizzare molti comandi differenti,
+che seguono le convenzioni presenti nei paesi anglosassoni e sono (ordinati 
+per ``grandezza'' logica):
+\begin{description}
+    \item \texttt{\textbackslash part} per strutturare il nostro documento in
+    parti. Questo comando non influisce sulla numerazione dei capitoli ed è
+    disponibile per le classi \texttt{book} e \texttt{report};
+    \item \texttt{\textbackslash chapter} per dividere in capitoli. Anche
+    questo comando è disponibile per le classi \texttt{book} e \texttt{report};
+    \item \texttt{\textbackslash section} corrisponde più o meno ad un 
+    paragrafo;
+    \item \texttt{\textbackslash subsection} per dividere in sottoparagrafi;
+    \item \texttt{\textbackslash subsubsection} per dividere in
+    sotto-sottoparagrafi;
+    \item \texttt{\textbackslash paragraph} è l'equivalente di una sezione;
+    \item \texttt{\textbackslash subparagraph} sezionamento di livello più
+    basso possibile.
+\end{description}
+È spesso cosnsigliato di non sezionare il documento troppo finemente. Le 
+divisioni fino a \texttt{subsection} sono aggiunte automaticamente all'indice e
+vengono automaticamente numerate. Se per qualche motivo si vuole che una di
+queste divisioni non appaia nell'indice è necessario postporre al nome del
+comando un asterisco (per esempio \emph{\textbackslash{}chapter*{Nome
+capitolo}}). Infine per mostrare l'indice delle sezioni è sufficiente dare il
+comando \texttt{\textbackslash tableofcontents}.
+
 \section{Package}
 Nella scrittura di un documento, talvolta abbiamo necessità di aggiungere 
 alcune cose magiche. In italiano, come in altre lingue a dir la verità, 
