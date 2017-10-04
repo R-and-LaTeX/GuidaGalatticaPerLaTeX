@@ -102,7 +102,7 @@ TeX, che possono rappresentare capitoli o parti (la suddivisione è a proprio
 piacimento)
   \begin{itemize}
    \item Abbiamo il file \texttt{config/} dove configurare i vari pacchetti
-(per esempio scriviamo li se preferiamo avere i link di colore rosso al posto
+(per esempio scriviamo lì se preferiamo avere i link di colore rosso al posto
 di blu), mentre nell'altro file, \texttt{package.tex}, abbiamo tutte le
 importazioni necessarie per far compilare il documento. In questa maniera, se
 un pacchetto dovesse a detta del compilatore risultare mancante potremmo subito
@@ -112,8 +112,8 @@ macchine, e le macchine se programmate bene hanno la tendenza e non sbagliare.}
 posto dove salvarle e eviteremo in questa maniera di spargerle su tutto il
 progetto.
   \item \texttt{listOfSections} grazie alla \textit{keyword} \verb!\include{ }!
-possiamo includere diversi file, ed è consigliato includere qui la lista dei
-sezioni/parti che vogliamo vengano compilati nel documento.
+possiamo includere diversi file, ed è consigliato includere qui la lista delle
+sezioni/parti che vogliamo vengano compilate nel documento.
   \end{itemize}
 \end{itemize}
 
@@ -127,7 +127,7 @@ due pagine, uno con il titolo e l'altra con una scritta e una figura.
 \subsubsection{Hello world!}
 
 In Informatica è buona pratica iniziare sempre con un programmino semplice che
-stampi una scritta di saluto. Noi ovviamente non ci sottraeremo dalla
+stampi una scritta di saluto. Noi ovviamente non ci sottrarremo dalla
 tradizione, per cui faremo lo stesso.
 
 \paragraph*{File principale} Dal nostro progetto vuoto inseriamo il seguente
@@ -166,7 +166,7 @@ Ora passiamo al file successivo.
 
 \paragraph*{File \texttt{res/config/config.tex}} Andiamo a creare questo file
 come al solito. In questo progetto non abbiamo nessuna configurazione
-particolare, e quindi lo possiamo lasciare vuoto. In caso dovremo inserire
+particolare, e quindi lo possiamo lasciare vuoto. In caso dovessimo inserire
 qualche configurazione potremmo modificarlo più avanti.
 
 \paragraph*{File \texttt{res/listOfSections.tex}} Creiamo questo file con il
@@ -189,7 +189,7 @@ codice:
 \lstinputlisting{res/examples/Prova/res/sections/parte1.tex}
 
 \noindent Cosa abbiamo qui? Prima di tutto, abbiamo una normale scritta, che
-contiene il nostro famoso saluto. Proviamo ora a includere la immagine.
+contiene il nostro famoso saluto. Proviamo ora a includere l'immagine.
 Ci sono due modi per farlo:
 \begin{itemize}
  \item Scrivere direttamente il codice (scelta consigliata)
@@ -199,7 +199,7 @@ Ci sono due modi per farlo:
 Nel primo caso, dobbiamo solo copiare il codice, mentre nel secondo caso
 andiamo a cliccare l'icona a forma di immagine che si trova in alto a sinistra
 (per chi non trovasse l'icona veda l'immagine \ref{img:principale_texcenter},
-nel quadrato con l'etichetta \textit{Elenchi puntati, gestione immagini}.
+nel quadrato con l'etichetta \textit{Elenchi puntati, gestione immagini}).
 A questo punto si aprirà una finestrella che ci chiederà di inserire il
 percorso dell'immagine e altre opzioni. Fatto ciò andiamo a selezionarla
 premendo sul bottone con i tre puntini.
@@ -251,7 +251,7 @@ volte.
 \section{Suddivisione del progetto in più file}
 \label{sec:prog_piu_file}
 
-Come abbiamo visto prima, anche per un semplice progetto come un \textit{Hello
+Come abbiamo visto prima, anche un semplice progetto come un \textit{Hello
 World} può risultare nella creazione di 4-5 file. Non preoccupatevi! È un
 fenomeno normale in \LaTeX{}.
 Per includere diversi file in \LaTeX{} esistono due comandi:
@@ -260,7 +260,7 @@ Per includere diversi file in \LaTeX{} esistono due comandi:
 come se fosse uno unico, e permette di concatenare file fino a qualsiasi
 profondità.
  \item \verb!\include{ }! la seguente \textit{keyword} inserisce della magia,
-come un'interruzione di pagina e creare altri file utili a tempi di
+come un'interruzione di pagina e crea altri file utili a tempi di
 compilazione. Questo comando è solitamente utile quando si ha un progetto
 grande su computer molto lento, in quanto il cambiamento di un file non
 comporta la ricompilazione completa di tutto il documento, anche se non
@@ -271,7 +271,7 @@ ci serve a noi, è meglio usare sempre il primo comando.
 
 \paragraph*{Suddivisione del contenuto in \texttt{res/sections/}} In generale,
 non c'è una regola predefinita per suddividere il proprio contenuto: questo può
-essere suddiviso per capitoli se per esempio si sta scrivendo una testi, oppure
+essere suddiviso per capitoli se per esempio si sta scrivendo una tesi, oppure
 per sezioni se invece si sta scrivendo una pubblicazione scientifica, il tutto
 dipende dalla granularità che si vuole dare al documento, e alla facilità con
 cui si vogliono spostare gli argomenti.
