@@ -4,7 +4,7 @@ Si, avete letto bene, non vi stiamo prendendo in giro: con \LaTeX{} è possibile
 creare anche delle splendide presentazioni. ``Come si fa?'' immagino vi starete
 chiedendo, e la risposta è usando un formato di documento
 (\verb!\documentclass!) apposito, che si chiama \texttt{beamer}. In questo
-capitolo andramo ad analizzare un attimo il funzionamento di questa classe,
+capitolo andremo ad analizzare un attimo il funzionamento di questa classe,
 che include dei comandi specifici per la creazione di slide e l'inserimento di
 effetti di transizione tra di esse\footnote{\LaTeX{} è in grado di supportare
 transizioni anche nei PDF, dando la possibilità di avere un documento leggibile
@@ -19,7 +19,7 @@ contenente un semplice ``Ciao!'':
 \noindent Il risultato che otteniamo non è dei più belli. Un punto molto forte
 di Beamer però è la sua praticamente infinita possibilità di personalizzazione,
 con supporto a temi e a differenti set di colori per ogni tema. Più avanti
-vedremo come selezionare alcuni già esistenti.
+vedremo come selezionarne alcuni già esistenti.
 
 \begin{figure}[t]
  \centering
@@ -48,8 +48,8 @@ presentazione arricchendola nella maniera seguente:
 \lstinputlisting{res/examples/beamerciao2.tex}
 
 \noindent Se state provando a compilare gli esempi presenti nella guida (cosa
-che dovreste!) potrete notare cosa in alto a sinistra è successo: una scritta
-più grande con colori diversi dal resto del testo è apparsa.
+che dovreste!) potrete notare cosa è successo in alto a sinistra: è apparsa
+una scritta più grande con colori diversi dal resto del testo.
 
 \subsection{Creazione slide iniziale}
 Tutte le presentazioni iniziano con una slide iniziale: di solito si mette il
@@ -80,8 +80,8 @@ presentiamo (o andiamo a presentare)
 \end{itemize}
 
 In generale, tutti i campi qui presenti sono facoltativi: possiamo anche non
-mettere il titolo, ma con ovvie conseguenze. Inoltre questi campi oltre a
-servire per creare la prima pagine del documento possono contribuire a fornire
+mettere il titolo, ma con ovvie conseguenze. Questi campi oltre a
+servire per creare la prima pagina del documento possono contribuire a fornire
 \textit{metadata}\footnote{\url{https://it.wikipedia.org/wiki/Metadato}} al PDF
 che verrà poi generato e per far si che ciò avvenga basterà importare il
 pacchetto \texttt{hyperref} con l'opzione \texttt{pdfusetitle}.
