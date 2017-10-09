@@ -156,8 +156,13 @@ aprirà una scheda con un nuovo file vuoto. Qui scriviamo:
 \noindent Qui gli stiamo specificando come vogliamo creare un documento che
 sarà un libro, di usare il carattere 12 quando non specificato e di includere
 due pacchetti: \texttt{graphicx} e \texttt{float}.
-Quando andiamo a salvare ora andiamo nel nostro progetto e creiamo due nuove
-cartelle, \texttt{res} e dentro questa cartella creiamo \texttt{config}.
+Al momento di salvare il progetto creiamo le seguenti cartelle:
+
+\begin{itemize}
+\item res
+\item config (all'interno della cartella res)
+\end{itemize}
+
 All'interno di quest'ultima salviamo il nostro file, impostando la voce
 \texttt{Encoding} in \texttt{UTF-8}\footnote{Questo ci serve per aggiungere
 compatibilità con gli accenti}.
@@ -211,9 +216,11 @@ premendo sul bottone con i tre puntini.
  \label{img:insert_figure}
 \end{figure}
 
-Selezioniamo anche la spunta ``Here'' e inseriamo una \textit{caption} e una
-\textit{label} che più ci aggradano (non inserite caratteri speciali nella
-\textit{label} o il documento non compilerà più).
+Selezioniamo anche la spunta ``Here'' e inseriamo una \textit{caption} e
+una \textit{label} che più ci aggradano (non inserite caratteri speciali nella
+label o il documento non compilerà più).
+La caption è la didascalia dell'immagine, mentre la funzione della label è
+spiegata nella sezione \ref{sec:hyper}.
 
 \paragraph*{Compilazione} Prima di compilare settiamo l'output di compilazione.
 Nel menù a tendina selezioniamo la voce ``LaTeX $\to$ PDF''. Ora clicchiamo il
